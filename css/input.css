@@ -1,0 +1,148 @@
+
+@import 'tailwindcss';
+
+@tailwind utilities;
+
+/* ─── Google Fonts ────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── Base ───────────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+    @apply bg-white text-navy-900;
+  }
+  .dark body {
+    @apply bg-navy-950 text-gray-100;
+  }
+  ::selection { @apply bg-orange-500 text-white; }
+  :focus-visible { @apply outline-2 outline-orange-500 outline-offset-2; }
+}
+
+/* ─── Components ─────────────────────────────────────────────── */
+@layer components {
+
+  /* Navbar */
+  .nav-link {
+    @apply relative text-sm font-medium text-navy-700 dark:text-gray-300
+           hover:text-orange-500 dark:hover:text-orange-400
+           transition-colors duration-200 py-1;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500
+           transition-all duration-300;
+  }
+  .nav-link:hover::after { @apply w-full; }
+
+  /* Section titles */
+  .section-label {
+    @apply text-xs font-mono font-semibold tracking-widest uppercase
+           text-orange-500 mb-2;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold
+           text-navy-900 dark:text-white leading-tight;
+  }
+  .section-subtitle {
+    @apply text-gray-500 dark:text-gray-400 text-lg leading-relaxed mt-4 max-w-2xl;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           bg-orange-500 text-white font-semibold text-sm
+           hover:bg-orange-600 active:scale-95
+           shadow-glow hover:shadow-lg
+           transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           border-2 border-navy-900 dark:border-white
+           text-navy-900 dark:text-white font-semibold text-sm
+           hover:bg-navy-900 hover:text-white
+           dark:hover:bg-white dark:hover:text-navy-900
+           transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
+           border border-sky-400 text-sky-500 dark:text-sky-300 font-semibold text-sm
+           hover:bg-sky-500 hover:text-white
+           transition-all duration-200 active:scale-95;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-navy-900 rounded-2xl shadow-card
+           border border-gray-100 dark:border-navy-800
+           hover:shadow-premium transition-all duration-300;
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
+           bg-navy-50 dark:bg-navy-800 text-navy-700 dark:text-sky-300
+           border border-navy-100 dark:border-navy-700
+           transition-all duration-200 hover:scale-105 hover:border-orange-400;
+  }
+
+  /* Project status badge */
+  .badge-done      { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400; }
+  .badge-progress  { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100  text-amber-700  dark:bg-amber-900/40  dark:text-amber-400;  }
+  .badge-upcoming  { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-400; }
+
+  /* Tech span inside project cards */
+  .tech-span {
+    @apply text-xs font-mono px-2 py-0.5 rounded-md font-semibold;
+  }
+
+  /* Section wrappers */
+  .section-light { @apply bg-white dark:bg-navy-950 py-20 md:py-28; }
+  .section-dark  { @apply bg-gray-50 dark:bg-navy-900  py-20 md:py-28; }
+
+  /* Skeleton */
+  .skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-navy-800 rounded-lg;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f97316 0%, #0ea5e9 100%);
+  }
+  .glow-border {
+    box-shadow: 0 0 0 2px theme('colors.orange.500');
+  }
+  .portrait-frame {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  .portrait-frame-hover:hover {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transition: border-radius 1.2s ease;
+  }
+}
+
+/* ─── Dropdown ───────────────────────────────────────────────── */
+.dropdown-menu {
+  @apply absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56
+         bg-white dark:bg-navy-900 rounded-xl shadow-premium
+         border border-gray-100 dark:border-navy-800
+         opacity-0 pointer-events-none scale-95
+         transition-all duration-200 origin-top z-50 py-2;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  @apply opacity-100 pointer-events-auto scale-100;
+}
+
+/* ─── Scroll reveal ──────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Custom scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-orange-400 rounded-full; }

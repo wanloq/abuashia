@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ──────────────────────────────────────────────── -->
+  <title>Blog — Abuashia Michael Jinks | AI, Go & Full Stack Dev Insights</title>
+  <meta name="description" content="Insights on AI/ML engineering, Go backend development, prompt engineering, and full-stack web development from Abuashia Michael Jinks — a developer based in Nigeria." />
+  <meta name="keywords" content="AI Engineer Blog Nigeria, Go Developer Blog, Prompt Engineering, Full Stack Blog, Machine Learning Nigeria, Vibe Coding, LLM development" />
+  <meta name="author" content="Abuashia Michael Jinks" />
+  <link rel="canonical" href="https://abuashiamichael.xyz/blog.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://abuashiamichael.xyz/blog.html" />
+  <meta property="og:title"       content="Blog — Abuashia Michael Jinks" />
+  <meta property="og:description" content="AI, Go, and Full Stack development insights from Nigeria." />
+
+  <!-- ── Fonts ─────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/output.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230e1e3c'/><text x='16' y='22' text-anchor='middle' font-size='16' font-family='serif' font-weight='bold' fill='%23f97316'>M</text></svg>" />
+</head>
+
+<body class="bg-white dark:bg-navy-950 text-navy-900 dark:text-gray-100 transition-colors duration-300">
+
+<!-- ── NAVBAR ─────────────────────────────────────────────── -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-navy-950/90 backdrop-blur-md border-b border-gray-100 dark:border-navy-800 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 rounded-lg bg-navy-900 dark:bg-orange-500 flex items-center justify-center transition-all group-hover:rotate-6">
+        <span class="font-display font-bold text-orange-500 dark:text-white text-lg leading-none">M</span>
+      </div>
+      <span class="font-display font-bold text-navy-900 dark:text-white text-lg tracking-tight hidden sm:block">
+        Abuashia <span class="text-orange-500">Michael</span>
+      </span>
+    </a>
+
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="nav-link text-sm hidden sm:block">← Portfolio</a>
+      <button id="darkToggle" aria-label="Toggle dark mode"
+              class="w-10 h-10 rounded-xl flex items-center justify-center
+                     bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300
+                     hover:bg-orange-100 dark:hover:bg-navy-700 transition-all">
+        <svg id="sunIcon"  class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="moonIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="index.html#contact" class="btn-primary py-2 px-5 text-sm hidden sm:inline-flex">Hire Me</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 py-24 overflow-hidden">
+  <div class="absolute top-10 right-20 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-pulse-slow" aria-hidden="true"></div>
+  <div class="absolute bottom-10 left-10 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl animate-pulse-slow" aria-hidden="true"></div>
+  <div class="absolute inset-0 opacity-5" aria-hidden="true"
+       style="background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20">
+      <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+      <span class="text-orange-400 text-xs font-mono font-semibold tracking-widest uppercase">New articles weekly</span>
+    </div>
+
+    <h1 class="font-display text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      The <span class="text-gradient bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
+      Wanloq</span> Blog
+    </h1>
+    <p class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+      Raw, honest writing on AI/ML engineering, Go development, prompt engineering, and building software
+      products from Africa for the world. No fluff, just code and clarity.
+    </p>
+
+    <!-- Search bar -->
+    <div class="max-w-xl mx-auto relative">
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input type="search" id="blogSearch" placeholder="Search articles…"
+             class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white/10 text-white placeholder-gray-400
+                    border border-white/20 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20
+                    outline-none transition-all backdrop-blur-sm" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ── MAIN LAYOUT: sidebar + feed ───────────────────────── -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12">
+
+    <!-- ── ARTICLE FEED ──────────────────────────────────── -->
+    <div id="articleFeed" class="space-y-10">
+
+      <!-- Article 1 -->
+      <article id="art-1" class="card overflow-hidden reveal group">
+        <div class="h-56 md:h-64 bg-gradient-to-br from-sky-900 to-navy-900 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg class="w-32 h-32 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="badge-done text-xs px-3">🤖 AI/ML</span>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3 flex-wrap">
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              June 15, 2026
+            </span>
+            <span>·</span>
+            <span>8 min read</span>
+            <span>·</span>
+            <span class="text-orange-400 font-medium">Prompt Engineering</span>
+          </div>
+
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+            The Prompt Engineer's Playbook: How I Build AI Features That Actually Work in Production
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+            Prompt engineering isn't just about clever phrasing — it's systems design. After months of building
+            AI-powered features, I've developed a repeatable framework for crafting prompts that are robust,
+            versioned, and production-tested. Here's my full playbook, from zero-shot experiments to
+            multi-turn conversation architecture.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Prompt Engineering</span>
+            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">LLMs</span>
+            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Python</span>
+            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Production AI</span>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500/50">
+                <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+              </div>
+              <span class="text-sm font-semibold text-navy-900 dark:text-white">Michael Jinks</span>
+            </div>
+            <a href="#art-1" class="btn-primary py-2 px-5 text-sm">
+              Read Article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article id="art-2" class="card overflow-hidden reveal group">
+        <div class="h-56 md:h-64 bg-gradient-to-br from-emerald-900 to-navy-900 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg class="w-32 h-32 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="badge-done text-xs px-3">⬡ Go</span>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3 flex-wrap">
+            <span>June 5, 2026</span>
+            <span>·</span>
+            <span>12 min read</span>
+            <span>·</span>
+            <span class="text-emerald-400 font-medium">Backend Engineering</span>
+          </div>
+
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+            Why I Rebuilt My Redis Clone Twice — and What I Learned About Go's Concurrency Model
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+            My first attempt at a Redis clone in Go worked. My second attempt was a completely different
+            beast. This is a deep dive into goroutines, mutexes, channels, and why the concurrency model
+            that feels elegant in theory can break you in production. With real code, real mistakes,
+            and the exact fixes that made it click.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go</span>
+            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis</span>
+            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Concurrency</span>
+            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Systems Design</span>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500/50">
+                <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+              </div>
+              <span class="text-sm font-semibold text-navy-900 dark:text-white">Michael Jinks</span>
+            </div>
+            <a href="#art-2" class="btn-primary py-2 px-5 text-sm">
+              Read Article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article id="art-3" class="card overflow-hidden reveal group">
+        <div class="h-56 md:h-64 bg-gradient-to-br from-orange-900 to-navy-900 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg class="w-32 h-32 text-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="tech-span bg-orange-500 text-white px-3 py-1">🌍 Tech in Africa</span>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3 flex-wrap">
+            <span>May 28, 2026</span>
+            <span>·</span>
+            <span>6 min read</span>
+            <span>·</span>
+            <span class="text-orange-400 font-medium">Opinion</span>
+          </div>
+
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+            Building Tech in Nigeria: The Honest Reality of Being a Remote AI Engineer in 2026
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+            Power outages, spotty internet, USD salary gaps, and still shipping world-class software —
+            this is what it actually looks like to build an AI/ML career from Nigeria in 2026.
+            An honest, unfiltered account of the challenges, the wins, and the unique advantages
+            that no one talks about.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Career</span>
+            <span class="tech-span bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">Africa Tech</span>
+            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Remote Work</span>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500/50">
+                <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+              </div>
+              <span class="text-sm font-semibold text-navy-900 dark:text-white">Michael Jinks</span>
+            </div>
+            <a href="#art-3" class="btn-primary py-2 px-5 text-sm">
+              Read Article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article id="art-4" class="card overflow-hidden reveal group">
+        <div class="h-56 md:h-64 bg-gradient-to-br from-violet-900 to-navy-900 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg class="w-32 h-32 text-violet-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="badge-upcoming text-xs px-3">🎯 Tutorial</span>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3 flex-wrap">
+            <span>May 18, 2026</span>
+            <span>·</span>
+            <span>15 min read</span>
+            <span>·</span>
+            <span class="text-violet-400 font-medium">Full Stack</span>
+          </div>
+
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+            Build a Vercel Clone in Go: A Complete Step-by-Step Walkthrough
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+            A detailed walkthrough of how I built a working Vercel clone using Go, Redis, and Cloudflare R2.
+            Covers the architecture decisions, the CI/CD pipeline, the storage layer, and the lessons
+            learned shipping a deployment platform from scratch. All code examples included.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go</span>
+            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Cloudflare R2</span>
+            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis</span>
+            <span class="tech-span bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">DevOps</span>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500/50">
+                <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+              </div>
+              <span class="text-sm font-semibold text-navy-900 dark:text-white">Michael Jinks</span>
+            </div>
+            <a href="#art-4" class="btn-primary py-2 px-5 text-sm">
+              Read Article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Newsletter inline -->
+      <div class="card p-8 bg-gradient-to-br from-navy-900 to-navy-800 text-center reveal border-0">
+        <div class="text-3xl mb-3">📬</div>
+        <h3 class="font-display text-2xl font-bold text-white mb-2">Stay in the Loop</h3>
+        <p class="text-gray-300 text-sm mb-6 max-w-sm mx-auto">
+          No spam. Just new articles on AI, Go, and building in Africa — straight to your inbox.
+        </p>
+        <form id="inlineNewsletterForm" class="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
+          <input type="email" placeholder="your@email.com" required
+                 class="flex-1 px-4 py-3 rounded-xl bg-white/10 text-white placeholder-gray-400
+                        border border-white/20 focus:border-orange-400 outline-none transition-all" />
+          <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Article 5 -->
+      <article id="art-5" class="card overflow-hidden reveal group">
+        <div class="h-56 md:h-64 bg-gradient-to-br from-teal-900 to-navy-900 relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg class="w-32 h-32 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="badge-progress text-xs px-3">🔥 Trending</span>
+          </div>
+        </div>
+
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3 flex-wrap">
+            <span>May 8, 2026</span>
+            <span>·</span>
+            <span>10 min read</span>
+            <span>·</span>
+            <span class="text-teal-400 font-medium">Vibe Coding</span>
+          </div>
+
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+            Vibe Coding is Real, and It's Changing How I Ship Products — Here's What the Critics Miss
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+            Everyone has an opinion on "vibe coding." Most of the critics have never actually shipped
+            something with it. I have. This is a measured, experience-backed defence of AI-assisted
+            development — where it genuinely accelerates output, where it fails, and the discipline
+            required to make it sustainable at scale.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-span bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300">AI Tools</span>
+            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Vibe Coding</span>
+            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Productivity</span>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500/50">
+                <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+              </div>
+              <span class="text-sm font-semibold text-navy-900 dark:text-white">Michael Jinks</span>
+            </div>
+            <a href="#art-5" class="btn-primary py-2 px-5 text-sm">
+              Read Article
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /articleFeed -->
+
+
+    <!-- ── SIDEBAR ────────────────────────────────────────── -->
+    <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
+
+      <!-- About widget -->
+      <div class="card p-5">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-orange-500/50">
+            <img src="assets/portrait.jpg" alt="Michael Jinks" class="w-full h-full object-cover object-top" loading="lazy" />
+          </div>
+          <div>
+            <div class="font-bold text-navy-900 dark:text-white text-sm">Michael Jinks</div>
+            <div class="text-xs text-gray-400">AI Engineer &amp; Writer</div>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+          Writing about AI, Go, and building products from Nigeria. Subscriber-supported,
+          always free to read.
+        </p>
+        <a href="index.html" class="btn-primary w-full justify-center text-xs py-2.5">View Portfolio</a>
+      </div>
+
+      <!-- Categories -->
+      <div class="card p-5">
+        <h3 class="font-bold text-navy-900 dark:text-white text-sm mb-4 flex items-center gap-2">
+          <span class="text-orange-500">#</span> Categories
+        </h3>
+        <div class="space-y-2">
+          <button onclick="filterCategory('AI/ML')" class="w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors flex items-center justify-between">
+            <span>🤖 AI / Machine Learning</span>
+            <span class="text-xs text-gray-400 bg-gray-100 dark:bg-navy-800 px-2 py-0.5 rounded-full">1</span>
+          </button>
+          <button onclick="filterCategory('Go')" class="w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors flex items-center justify-between">
+            <span>⬡ Go / Backend</span>
+            <span class="text-xs text-gray-400 bg-gray-100 dark:bg-navy-800 px-2 py-0.5 rounded-full">2</span>
+          </button>
+          <button onclick="filterCategory('Career')" class="w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors flex items-center justify-between">
+            <span>🌍 Tech in Africa / Career</span>
+            <span class="text-xs text-gray-400 bg-gray-100 dark:bg-navy-800 px-2 py-0.5 rounded-full">1</span>
+          </button>
+          <button onclick="filterCategory('Tutorial')" class="w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors flex items-center justify-between">
+            <span>🎯 Tutorials</span>
+            <span class="text-xs text-gray-400 bg-gray-100 dark:bg-navy-800 px-2 py-0.5 rounded-full">1</span>
+          </button>
+          <button onclick="filterCategory('Vibe')" class="w-full text-left text-sm px-3 py-2 rounded-lg hover:bg-orange-50 dark:hover:bg-navy-800 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors flex items-center justify-between">
+            <span>⚡ Vibe Coding</span>
+            <span class="text-xs text-gray-400 bg-gray-100 dark:bg-navy-800 px-2 py-0.5 rounded-full">1</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="card p-5">
+        <h3 class="font-bold text-navy-900 dark:text-white text-sm mb-4">🏷 Popular Tags</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag text-xs cursor-pointer">#golang</span>
+          <span class="skill-tag text-xs cursor-pointer">#ai-engineer</span>
+          <span class="skill-tag text-xs cursor-pointer">#python</span>
+          <span class="skill-tag text-xs cursor-pointer">#prompt-engineering</span>
+          <span class="skill-tag text-xs cursor-pointer">#nigeria-tech</span>
+          <span class="skill-tag text-xs cursor-pointer">#vibe-coding</span>
+          <span class="skill-tag text-xs cursor-pointer">#redis</span>
+          <span class="skill-tag text-xs cursor-pointer">#rest-api</span>
+          <span class="skill-tag text-xs cursor-pointer">#full-stack</span>
+          <span class="skill-tag text-xs cursor-pointer">#llm</span>
+        </div>
+      </div>
+
+      <!-- Newsletter sidebar -->
+      <div class="card p-5 bg-gradient-to-br from-orange-500 to-orange-600 border-0">
+        <h3 class="font-bold text-white text-sm mb-2">📬 Newsletter</h3>
+        <p class="text-orange-100 text-xs mb-4">Weekly insights on AI, Go &amp; African tech. No spam.</p>
+        <form id="sideNewsletterForm" class="space-y-2">
+          <input type="email" placeholder="your@email.com" required
+                 class="w-full px-3 py-2.5 rounded-xl bg-white/20 text-white placeholder-orange-200
+                        border border-white/30 focus:border-white focus:bg-white/30 outline-none text-sm transition-all" />
+          <button type="submit"
+                  class="w-full py-2.5 rounded-xl bg-navy-900 text-white text-sm font-semibold
+                         hover:bg-navy-800 transition-colors">
+            Subscribe Free
+          </button>
+        </form>
+      </div>
+
+      <!-- Ad placeholder -->
+      <div class="card p-5 border-dashed border-2 border-gray-200 dark:border-navy-700 text-center">
+        <div class="text-gray-300 dark:text-navy-700 text-xs mb-2">ADVERTISEMENT</div>
+        <div class="h-32 bg-gray-50 dark:bg-navy-800 rounded-xl flex items-center justify-center">
+          <span class="text-gray-300 dark:text-gray-600 text-xs">300 × 250</span>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer class="bg-navy-950 dark:bg-black border-t border-navy-800">
+  <!-- Quick links + tags row -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Quick links -->
+      <div>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="text-gray-400 hover:text-orange-400 transition-colors">Portfolio</a></li>
+          <li><a href="index.html#about" class="text-gray-400 hover:text-orange-400 transition-colors">About</a></li>
+          <li><a href="index.html#projects" class="text-gray-400 hover:text-orange-400 transition-colors">Projects</a></li>
+          <li><a href="index.html#contact" class="text-gray-400 hover:text-orange-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Categories -->
+      <div>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><span class="text-gray-400">🤖 AI / ML</span></li>
+          <li><span class="text-gray-400">⬡ Go / Backend</span></li>
+          <li><span class="text-gray-400">🌍 Tech in Africa</span></li>
+          <li><span class="text-gray-400">⚡ Vibe Coding</span></li>
+        </ul>
+      </div>
+      <!-- Connect -->
+      <div>
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Connect</h4>
+        <div class="flex gap-3">
+          <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noopener" aria-label="LinkedIn"
+             class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-[#0077B5] flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/wanloq" target="_blank" rel="noopener" aria-label="GitHub"
+             class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-gray-700 flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://twitter.com/wanloq" target="_blank" rel="noopener" aria-label="X"
+             class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-gray-700 flex items-center justify-center transition-colors">
+            <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-navy-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+          <span class="font-display font-bold text-white text-xs">M</span>
+        </div>
+        <span class="font-display font-bold text-white text-sm">Abuashia <span class="text-orange-400">Michael</span> Jinks</span>
+      </div>
+      <small class="text-gray-500 text-xs">&copy; <span class="blog-year"></span> Abuashia Michael Jinks. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ── FLOATING TOOLBAR ────────────────────────────────────── -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2
+            bg-navy-900/90 dark:bg-navy-950/90 backdrop-blur-md
+            border border-navy-700 rounded-2xl px-4 py-2.5 shadow-premium">
+  <!-- Back to top -->
+  <button id="bttBlog" aria-label="Back to top"
+          class="w-9 h-9 rounded-xl bg-orange-500 hover:bg-orange-600 text-white
+                 flex items-center justify-center transition-all active:scale-95">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+  <!-- Divider -->
+  <div class="w-px h-6 bg-navy-700"></div>
+  <!-- Prev article -->
+  <button id="prevArticle" aria-label="Previous article"
+          class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-navy-700 text-gray-300
+                 flex items-center justify-center transition-all active:scale-95">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <!-- Next article -->
+  <button id="nextArticle" aria-label="Next article"
+          class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-navy-700 text-gray-300
+                 flex items-center justify-center transition-all active:scale-95">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+
+<!-- ── JAVASCRIPT ──────────────────────────────────────────── -->
+<script>
+/* Dark mode */
+(function() {
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (stored === 'dark' || (!stored && prefersDark)) root.classList.add('dark');
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.documentElement;
+  const toggle = document.getElementById('darkToggle');
+  const sunIcon = document.getElementById('sunIcon');
+  const moonIcon = document.getElementById('moonIcon');
+  function updateIcons() {
+    const isDark = root.classList.contains('dark');
+    sunIcon.classList.toggle('hidden', !isDark);
+    moonIcon.classList.toggle('hidden', isDark);
+  }
+  updateIcons();
+  toggle.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    updateIcons();
+  });
+
+  /* Copyright year */
+  document.querySelectorAll('.blog-year').forEach(el => el.textContent = new Date().getFullYear());
+
+  /* Scroll reveal */
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+
+  /* Back to top */
+  document.getElementById('bttBlog').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* Prev/Next article navigation */
+  const articles = Array.from(document.querySelectorAll('#articleFeed article[id]'));
+  let currentIdx = 0;
+  function getVisibleIdx() {
+    let closest = 0, closestDist = Infinity;
+    articles.forEach((a, i) => {
+      const d = Math.abs(a.getBoundingClientRect().top);
+      if (d < closestDist) { closestDist = d; closest = i; }
+    });
+    return closest;
+  }
+  document.getElementById('prevArticle').addEventListener('click', () => {
+    currentIdx = Math.max(0, getVisibleIdx() - 1);
+    articles[currentIdx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.getElementById('nextArticle').addEventListener('click', () => {
+    currentIdx = Math.min(articles.length - 1, getVisibleIdx() + 1);
+    articles[currentIdx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  /* Blog search */
+  document.getElementById('blogSearch').addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    articles.forEach(a => {
+      const text = a.textContent.toLowerCase();
+      a.style.display = !q || text.includes(q) ? '' : 'none';
+    });
+  });
+
+  /* Newsletter forms */
+  ['inlineNewsletterForm','sideNewsletterForm'].forEach(id => {
+    const f = document.getElementById(id);
+    if (f) f.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = '✅ Subscribed!';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = 'Subscribe Free'; btn.disabled = false; this.reset(); }, 3000);
+    });
+  });
+
+  /* Category filter (basic) */
+  window.filterCategory = function(cat) {
+    // Scroll to first matching article or show all
+    window.scrollTo({ top: document.getElementById('articleFeed').offsetTop - 80, behavior: 'smooth' });
+  };
+});
+</script>
+
+</body>
+</html>
