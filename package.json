@@ -1,15 +1,15 @@
 {
   "name": "abuashia",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "tailwind.config.js",
+  "devDependencies": {
+    "tailwindcss": "^4.3.2"
+  },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch"
+"dev": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "tailwindcss": "^4.3.2"
-  }
+  "description": ""
 }

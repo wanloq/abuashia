@@ -1,148 +1,465 @@
+/* css/input.css */
+/* Tailwind CSS v4.3.2 */
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@tailwind utilities;
+/* ----------------------------------------------------------
+   Theme
+---------------------------------------------------------- */
 
-/* ─── Google Fonts ────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@theme {
 
-/* ─── Base ───────────────────────────────────────────────────── */
+    /* Fonts */
+
+    --font-sans: "Inter", sans-serif;
+
+    /* Brand */
+
+    --color-brand-light: #f8fafc;
+    --color-brand-dark: #020617;
+
+    --color-brand-navy: #0f172a;
+    --color-brand-sky: #0ea5e9;
+    --color-brand-orange: #f97316;
+    --color-brand-purple: #8b5cf6;
+
+    /* Radius */
+
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-3xl: 2rem;
+
+    /* Shadows */
+
+    --shadow-glow:
+        0 20px 50px rgba(14,165,233,.20);
+
+    --shadow-card:
+        0 10px 35px rgba(15,23,42,.08);
+
+    /* Timing */
+
+    --ease-out:
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+/* ----------------------------------------------------------
+   Base
+---------------------------------------------------------- */
+
 @layer base {
-  html { scroll-behavior: smooth; }
-  body {
-    @apply font-sans antialiased transition-colors duration-300;
-    @apply bg-white text-navy-900;
-  }
-  .dark body {
-    @apply bg-navy-950 text-gray-100;
-  }
-  ::selection { @apply bg-orange-500 text-white; }
-  :focus-visible { @apply outline-2 outline-orange-500 outline-offset-2; }
+
+    html{
+
+        font-family:var(--font-sans);
+
+        scroll-behavior:smooth;
+
+        color-scheme:light;
+
+    }
+
+    html.dark{
+
+        color-scheme:dark;
+
+    }
+
+    body{
+
+        @apply bg-brand-light text-slate-800 antialiased;
+
+        text-rendering:optimizeLegibility;
+
+        transition:
+            background-color .3s,
+            color .3s;
+
+    }
+
+    html.dark body{
+
+        @apply bg-brand-dark text-slate-100;
+
+    }
+
+    ::selection{
+
+        @apply bg-brand-sky text-white;
+
+    }
+
+    img{
+
+        @apply max-w-full;
+
+        display:block;
+
+    }
+
+    button{
+
+        cursor:pointer;
+
+    }
+
+    a{
+
+        @apply transition-colors duration-300;
+
+    }
+
 }
 
-/* ─── Components ─────────────────────────────────────────────── */
-@layer components {
+/* ----------------------------------------------------------
+   Scrollbar
+---------------------------------------------------------- */
 
-  /* Navbar */
-  .nav-link {
-    @apply relative text-sm font-medium text-navy-700 dark:text-gray-300
-           hover:text-orange-500 dark:hover:text-orange-400
-           transition-colors duration-200 py-1;
-  }
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500
-           transition-all duration-300;
-  }
-  .nav-link:hover::after { @apply w-full; }
+@utility scrollbar {
 
-  /* Section titles */
-  .section-label {
-    @apply text-xs font-mono font-semibold tracking-widest uppercase
-           text-orange-500 mb-2;
-  }
-  .section-title {
-    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold
-           text-navy-900 dark:text-white leading-tight;
-  }
-  .section-subtitle {
-    @apply text-gray-500 dark:text-gray-400 text-lg leading-relaxed mt-4 max-w-2xl;
-  }
+    scrollbar-width:thin;
 
-  /* Buttons */
-  .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
-           bg-orange-500 text-white font-semibold text-sm
-           hover:bg-orange-600 active:scale-95
-           shadow-glow hover:shadow-lg
-           transition-all duration-200;
-  }
-  .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
-           border-2 border-navy-900 dark:border-white
-           text-navy-900 dark:text-white font-semibold text-sm
-           hover:bg-navy-900 hover:text-white
-           dark:hover:bg-white dark:hover:text-navy-900
-           transition-all duration-200 active:scale-95;
-  }
-  .btn-ghost {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl
-           border border-sky-400 text-sky-500 dark:text-sky-300 font-semibold text-sm
-           hover:bg-sky-500 hover:text-white
-           transition-all duration-200 active:scale-95;
-  }
+    scrollbar-color:
+        rgb(148 163 184)
+        transparent;
 
-  /* Cards */
-  .card {
-    @apply bg-white dark:bg-navy-900 rounded-2xl shadow-card
-           border border-gray-100 dark:border-navy-800
-           hover:shadow-premium transition-all duration-300;
-  }
-
-  /* Skill tag */
-  .skill-tag {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold
-           bg-navy-50 dark:bg-navy-800 text-navy-700 dark:text-sky-300
-           border border-navy-100 dark:border-navy-700
-           transition-all duration-200 hover:scale-105 hover:border-orange-400;
-  }
-
-  /* Project status badge */
-  .badge-done      { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400; }
-  .badge-progress  { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100  text-amber-700  dark:bg-amber-900/40  dark:text-amber-400;  }
-  .badge-upcoming  { @apply text-xs font-bold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-400; }
-
-  /* Tech span inside project cards */
-  .tech-span {
-    @apply text-xs font-mono px-2 py-0.5 rounded-md font-semibold;
-  }
-
-  /* Section wrappers */
-  .section-light { @apply bg-white dark:bg-navy-950 py-20 md:py-28; }
-  .section-dark  { @apply bg-gray-50 dark:bg-navy-900  py-20 md:py-28; }
-
-  /* Skeleton */
-  .skeleton {
-    @apply animate-pulse bg-gray-200 dark:bg-navy-800 rounded-lg;
-  }
 }
 
-/* ─── Utilities ──────────────────────────────────────────────── */
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #f97316 0%, #0ea5e9 100%);
-  }
-  .glow-border {
-    box-shadow: 0 0 0 2px theme('colors.orange.500');
-  }
-  .portrait-frame {
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  }
-  .portrait-frame-hover:hover {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transition: border-radius 1.2s ease;
-  }
+::-webkit-scrollbar{
+
+    width:10px;
+
 }
 
-/* ─── Dropdown ───────────────────────────────────────────────── */
-.dropdown-menu {
-  @apply absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56
-         bg-white dark:bg-navy-900 rounded-xl shadow-premium
-         border border-gray-100 dark:border-navy-800
-         opacity-0 pointer-events-none scale-95
-         transition-all duration-200 origin-top z-50 py-2;
-}
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  @apply opacity-100 pointer-events-auto scale-100;
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
 }
 
-/* ─── Scroll reveal ──────────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+::-webkit-scrollbar-thumb{
 
-/* ─── Custom scrollbar ───────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { @apply bg-transparent; }
-::-webkit-scrollbar-thumb { @apply bg-orange-400 rounded-full; }
+    border-radius:9999px;
+
+    background:rgb(148 163 184);
+
+}
+
+.dark ::-webkit-scrollbar-thumb{
+
+    background:rgb(71 85 105);
+
+}
+
+/* ----------------------------------------------------------
+   Buttons
+---------------------------------------------------------- */
+
+@utility btn {
+
+    @apply inline-flex items-center justify-center gap-2;
+
+    @apply rounded-full;
+
+    @apply font-semibold;
+
+    @apply transition-all duration-300;
+
+}
+
+@utility btn-primary{
+
+    @apply btn;
+
+    @apply bg-brand-orange;
+
+    @apply text-white;
+
+    @apply px-7 py-4;
+
+    @apply hover:bg-orange-600;
+
+    @apply hover:-translate-y-0.5;
+
+    @apply shadow-lg;
+
+    @apply hover:shadow-xl;
+
+}
+
+@utility btn-secondary{
+
+    @apply btn;
+
+    @apply border border-slate-300;
+
+    @apply bg-white;
+
+    @apply px-7 py-4;
+
+    @apply dark:bg-slate-900;
+
+    @apply dark:border-slate-700;
+
+    @apply hover:border-brand-sky;
+
+    @apply hover:text-brand-sky;
+
+}
+
+/* ----------------------------------------------------------
+   Cards
+---------------------------------------------------------- */
+
+@utility card{
+
+    @apply rounded-3xl;
+
+    @apply border border-slate-200;
+
+    @apply bg-white;
+
+    @apply shadow-sm;
+
+    @apply transition-all duration-300;
+
+    @apply dark:border-slate-800;
+
+    @apply dark:bg-slate-900;
+
+}
+
+@utility card-hover{
+
+    @apply hover:-translate-y-2;
+
+    @apply hover:shadow-2xl;
+
+}
+
+/* ----------------------------------------------------------
+   Glass
+---------------------------------------------------------- */
+
+@utility glass{
+
+    @apply bg-white/70;
+
+    @apply backdrop-blur-xl;
+
+    @apply border border-white/20;
+
+}
+
+.dark .glass{
+
+    @apply bg-slate-950/70;
+
+    @apply border-slate-800;
+
+}
+
+/* ----------------------------------------------------------
+   Gradient Text
+---------------------------------------------------------- */
+
+@utility gradient-text{
+
+    @apply bg-gradient-to-r;
+
+    @apply from-brand-sky;
+
+    @apply via-brand-purple;
+
+    @apply to-brand-orange;
+
+    @apply bg-clip-text;
+
+    @apply text-transparent;
+
+}
+
+/* ----------------------------------------------------------
+   Animation Utilities
+---------------------------------------------------------- */
+
+@utility fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+@utility fade-up-visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+@utility glow{
+
+    animation:
+        glowPulse
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+@utility floating{
+
+    animation:
+        floating
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+@utility spin-slow{
+
+    animation:
+        spin
+        2.5s
+        linear
+        infinite;
+
+}
+
+/* ----------------------------------------------------------
+   Keyframes
+---------------------------------------------------------- */
+
+@keyframes glowPulse{
+
+    0%,100%{
+
+        filter:brightness(1);
+
+    }
+
+    50%{
+
+        filter:brightness(1.15);
+
+    }
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fade-up{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/* ----------------------------------------------------------
+   Utilities
+---------------------------------------------------------- */
+
+@utility section{
+
+    @apply py-28;
+
+}
+
+@utility container-page{
+
+    @apply mx-auto;
+
+    @apply max-w-7xl;
+
+    @apply px-6;
+
+    @apply lg:px-8;
+
+}
+
+@utility heading{
+
+    @apply text-4xl;
+
+    @apply font-black;
+
+    @apply tracking-tight;
+
+    @apply md:text-5xl;
+
+}
+
+@utility paragraph{
+
+    @apply leading-8;
+
+    @apply text-slate-600;
+
+    @apply dark:text-slate-400;
+
+}
+
+@utility badge{
+
+    @apply inline-flex;
+
+    @apply rounded-full;
+
+    @apply px-4 py-2;
+
+    @apply text-sm;
+
+    @apply font-semibold;
+
+}
+
+@utility icon-box{
+
+    @apply flex;
+
+    @apply h-14 w-14;
+
+    @apply items-center;
+
+    @apply justify-center;
+
+    @apply rounded-2xl;
+
+}

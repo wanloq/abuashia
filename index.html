@@ -1,1300 +1,1437 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ── SEO ──────────────────────────────────────────────── -->
-  <title>Abuashia Michael Jinks | AI Engineer & Full Stack Developer Nigeria</title>
-  <meta name="description" content="Abuashia Michael Jinks — AI/ML Engineer and Full Stack Developer based in Nigeria. Building scalable AI systems, REST APIs, and modern web applications. Available for remote, hybrid, and on-site roles." />
-  <meta name="keywords" content="AI Engineer Nigeria, Full Stack Developer Nigeria, AI Developer, Machine Learning Engineer, Prompt Engineer, AI Engineer Portfolio, Full Stack Portfolio, Go Developer, JavaScript Developer, Tailwind CSS Developer, AI Software Engineer, Remote AI Engineer, AI/ML Engineer, Frontend Developer, Backend Developer, Vibe Coding, Prompt Engineering Expert, Golang Developer Nigeria" />
-  <meta name="author" content="Abuashia Michael Jinks" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://abuashiamichael.xyz/" />
+    <title>Abuashia Michael Jinks | Full Stack Developer & AI Engineer</title>
 
-  <!-- ── Open Graph ────────────────────────────────────────── -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://abuashiamichael.xyz/" />
-  <meta property="og:title"       content="Abuashia Michael Jinks | AI Engineer & Full Stack Developer" />
-  <meta property="og:description" content="AI/ML Engineer and Full Stack Developer from Nigeria. Go, Python, React, REST APIs, and prompt engineering." />
-  <meta property="og:image"       content="https://abuashiamichael.xyz/assets/og-image.jpg" />
+    <meta name="description" content="Portfolio of Abuashia Michael Jinks, Full Stack Developer, AI Engineer and Go Developer. Building modern web applications, scalable backend systems and AI-powered software.">
 
-  <!-- ── Twitter Card ──────────────────────────────────────── -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@wanloq" />
-  <meta name="twitter:title"       content="Abuashia Michael Jinks | AI Engineer & Full Stack Developer" />
-  <meta name="twitter:description" content="AI/ML Engineer and Full Stack Developer from Nigeria." />
-  <meta name="twitter:image"       content="https://abuashiamichael.xyz/assets/og-image.jpg" />
+    <meta name="author" content="Abuashia Michael Jinks">
 
-  <!-- ── Fonts ─────────────────────────────────────────────── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- ── Tailwind compiled ─────────────────────────────────── -->
-  <link rel="stylesheet" href="css/output.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-  <!-- ── Favicon ───────────────────────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230e1e3c'/><text x='16' y='22' text-anchor='middle' font-size='16' font-family='serif' font-weight='bold' fill='%23f97316'>M</text></svg>" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Abuashia Michael Jinks",
-    "url": "https://abuashiamichael.xyz",
-    "jobTitle": "AI/ML Engineer & Full Stack Developer",
-    "worksFor": { "@type": "Organization", "name": "Turing Tech LLC" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Abuja", "addressCountry": "NG" },
-    "email": "michaeljinksa@gmail.com",
-    "sameAs": [
-      "https://linkedin.com/in/wan-loq",
-      "https://github.com/wanloq",
-      "https://twitter.com/wanloq"
-    ]
-  }
-  </script>
+    <link rel="stylesheet" href="css/output.css">
+
+    <!-- Prevent theme flash -->
+    <script>
+        (() => {
+            const saved = localStorage.getItem("color-theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            if (saved === "dark" || (!saved && prefersDark)) {
+                document.documentElement.classList.add("dark");
+            }
+        })();
+    </script>
 </head>
 
-<body class="bg-white dark:bg-navy-950 text-navy-900 dark:text-gray-100 transition-colors duration-300">
+<body class="min-h-screen bg-brand-light font-[Inter] text-slate-800 antialiased transition-colors duration-300 dark:bg-brand-dark dark:text-slate-100">
 
-<!-- ════════════════════════════════════════════════════════════
-     STICKY NAVBAR
-════════════════════════════════════════════════════════════ -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        aria-label="Primary navigation">
-  <nav class="bg-white/80 dark:bg-navy-950/90 backdrop-blur-md border-b border-gray-100 dark:border-navy-800 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+<header
+    id="navbar"
+    class="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl transition-all duration-300 dark:border-slate-800 dark:bg-slate-950/70">
 
-        <!-- Logo -->
-        <a href="#home" class="flex items-center gap-2.5 group" aria-label="Home">
-          <div class="w-9 h-9 rounded-lg bg-navy-900 dark:bg-orange-500 flex items-center justify-center
-                      transition-all duration-300 group-hover:rotate-6">
-            <span class="font-display font-bold text-orange-500 dark:text-white text-lg leading-none">M</span>
-          </div>
-          <span class="font-display font-bold text-navy-900 dark:text-white text-lg tracking-tight hidden sm:block">
-            Abuashia <span class="text-orange-500">Michael</span>
-          </span>
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+        <a
+            href="index.html"
+            class="select-none text-2xl font-black tracking-tight text-brand-navy transition-colors hover:text-brand-sky dark:text-white">
+
+            Michael<span class="text-brand-orange">.</span>Jinks
+
         </a>
 
-        <!-- Desktop nav -->
-        <ul class="hidden lg:flex items-center gap-7" role="list">
-          <li><a href="#home"    class="nav-link">Home</a></li>
-          <li><a href="#about"   class="nav-link">About</a></li>
+        <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
 
-          <!-- Skills dropdown -->
-          <li class="relative dropdown">
-            <button class="nav-link flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              Skills
-              <svg class="w-3.5 h-3.5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="dropdown-menu" role="menu">
-              <a href="#skills-learned"  class="block px-4 py-2.5 text-sm text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors rounded-lg mx-1" role="menuitem">✅ Technologies Learned</a>
-              <a href="#skills-learning" class="block px-4 py-2.5 text-sm text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors rounded-lg mx-1" role="menuitem">🔄 Currently Learning</a>
-              <a href="#skills-soft"     class="block px-4 py-2.5 text-sm text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors rounded-lg mx-1" role="menuitem">🧠 Non-Technical Skills</a>
-            </div>
-          </li>
+            <a
+                href="#home"
+                class="transition-colors hover:text-brand-sky">
 
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="blog.html" class="nav-link" target="_blank" rel="noopener">Blog</a></li>
-          <li>
-            <a href="#contact" class="btn-primary py-2 px-5 text-sm">
-              Get in Touch
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                Home
+
             </a>
-          </li>
-        </ul>
 
-        <!-- Right controls: dark mode + hamburger -->
-        <div class="flex items-center gap-3">
-          <!-- Dark mode toggle -->
-          <button id="darkToggle" aria-label="Toggle dark mode"
-                  class="w-10 h-10 rounded-xl flex items-center justify-center
-                         bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gray-300
-                         hover:bg-orange-100 dark:hover:bg-navy-700 transition-all duration-200">
-            <svg id="sunIcon"  class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            <svg id="moonIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          </button>
+            <a
+                href="#about"
+                class="transition-colors hover:text-brand-sky">
 
-          <!-- Mobile hamburger -->
-          <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
-                  class="lg:hidden w-10 h-10 rounded-xl flex flex-col items-center justify-center gap-1.5
-                         bg-gray-100 dark:bg-navy-800 hover:bg-orange-100 dark:hover:bg-navy-700 transition-all">
-            <span class="w-5 h-0.5 bg-navy-900 dark:bg-white transition-all duration-300 menu-line1 rounded-full"></span>
-            <span class="w-5 h-0.5 bg-navy-900 dark:bg-white transition-all duration-300 menu-line2 rounded-full"></span>
-            <span class="w-4 h-0.5 bg-navy-900 dark:bg-white transition-all duration-300 menu-line3 rounded-full"></span>
-          </button>
+                About
+
+            </a>
+
+            <div class="group relative">
+
+                <button
+                    class="flex items-center gap-1 transition-colors hover:text-brand-sky">
+
+                    Skills
+
+                    <i class="ph ph-caret-down text-sm"></i>
+
+                </button>
+
+                <div class="invisible absolute left-0 mt-4 w-60 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 dark:border-slate-700 dark:bg-slate-900">
+
+                    <a
+                        href="#skills-learned"
+                        class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                        Technologies Learned
+
+                    </a>
+
+                    <a
+                        href="#skills-learning"
+                        class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                        Currently Learning
+
+                    </a>
+
+                    <a
+                        href="#skills-soft"
+                        class="block px-5 py-3 hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                        Core Competencies
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a
+                href="#projects"
+                class="transition-colors hover:text-brand-sky">
+
+                Projects
+
+            </a>
+
+            <a
+                href="blog.html"
+                class="transition-colors hover:text-brand-sky">
+
+                Blog
+
+            </a>
+
+            <button
+                id="theme-toggle"
+                type="button"
+                class="rounded-full p-2 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                <i class="ph ph-sun text-xl dark:hidden"></i>
+
+                <i class="ph ph-moon hidden text-xl dark:block"></i>
+
+            </button>
+
+            <a
+                href="#contact"
+                class="rounded-full bg-brand-orange px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-xl hover:shadow-orange-500/30">
+
+                Get in touch
+
+            </a>
+
+        </nav>
+
+        <div class="flex items-center gap-2 md:hidden">
+
+            <button
+                id="theme-toggle-mobile"
+                class="rounded-full p-2 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                <i class="ph ph-sun text-xl dark:hidden"></i>
+
+                <i class="ph ph-moon hidden text-xl dark:block"></i>
+
+            </button>
+
+            <button
+                id="mobile-menu-btn"
+                class="rounded-lg p-2 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+
+                <i class="ph ph-list text-2xl"></i>
+
+            </button>
+
         </div>
-      </div>
 
-      <!-- Mobile menu -->
-      <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-        <ul class="flex flex-col gap-1 py-4 border-t border-gray-100 dark:border-navy-800">
-          <li><a href="#home"    class="block px-4 py-3 rounded-xl text-sm font-medium text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors mobile-nav-link">Home</a></li>
-          <li><a href="#about"   class="block px-4 py-3 rounded-xl text-sm font-medium text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors mobile-nav-link">About</a></li>
-          <li><a href="#skills"  class="block px-4 py-3 rounded-xl text-sm font-medium text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors mobile-nav-link">Skills</a></li>
-          <li><a href="#projects"class="block px-4 py-3 rounded-xl text-sm font-medium text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors mobile-nav-link">Projects</a></li>
-          <li><a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-navy-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-navy-800 hover:text-orange-500 transition-colors mobile-nav-link" target="_blank" rel="noopener">Blog</a></li>
-          <li class="mt-2"><a href="#contact" class="btn-primary w-full justify-center mobile-nav-link">Get in Touch</a></li>
-        </ul>
-      </div>
     </div>
-  </nav>
+
+    <div
+        id="mobile-menu"
+        class="hidden border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+
+        <nav class="flex flex-col p-5">
+
+            <a class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800" href="#home">Home</a>
+
+            <a class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800" href="#about">About</a>
+
+            <a class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800" href="#skills">Skills</a>
+
+            <a class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800" href="#projects">Projects</a>
+
+            <a class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800" href="blog.html">Blog</a>
+
+            <a
+                href="#contact"
+                class="mt-5 rounded-xl bg-brand-orange py-3 text-center font-semibold text-white transition hover:bg-orange-600">
+
+                Get in touch
+
+            </a>
+
+        </nav>
+
+    </div>
+
 </header>
 
+<main>
 
-<!-- ════════════════════════════════════════════════════════════
-     HERO SECTION
-════════════════════════════════════════════════════════════ -->
-<section id="home" aria-label="Hero" class="relative min-h-screen flex items-center overflow-hidden
-  bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 pt-16">
+<section
+    id="home"
+    class="relative flex min-h-screen items-center overflow-hidden pt-20">
+        <div
+        class="absolute inset-0 -z-10 overflow-hidden">
 
-  <!-- Ambient blobs -->
-  <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute bottom-20 right-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+        <div
+            class="absolute -left-40 top-20 h-96 w-96 rounded-full bg-brand-sky/15 blur-3xl"></div>
 
-  <!-- Grid pattern overlay -->
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:60px 60px;">
-  </div>
+        <div
+            class="absolute right-0 top-0 h-[32rem] w-[32rem] rounded-full bg-brand-purple/10 blur-3xl"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div
+            class="absolute bottom-0 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-brand-orange/10 blur-3xl"></div>
 
-      <!-- LEFT: Copy ──────────────────────────────────────── -->
-      <div class="order-2 lg:order-1">
-        <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-2.5 mb-6 px-4 py-2 rounded-full
-                    bg-orange-500/10 border border-orange-500/20 reveal">
-          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
-          <span class="text-orange-400 text-xs font-mono font-semibold tracking-widest uppercase">
-            Available for Remote &amp; On-Site Roles
-          </span>
-        </div>
+    </div>
 
-        <!-- Name -->
-        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-4 reveal">
-          Abuashia<br/>
-          <span class="text-gradient bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
-            Michael
-          </span>
-          <span class="text-white"> Jinks</span>
-        </h1>
+    <div
+        class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 py-16 lg:grid-cols-2 lg:px-8">
 
-        <!-- Headline -->
-        <h2 class="text-xl md:text-2xl font-semibold text-sky-300 mb-5 reveal">
-          AI/ML Engineer &amp; Full Stack Developer
-        </h2>
+        <!-- Left Column -->
 
-        <!-- Supporting text -->
-        <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 max-w-xl reveal">
-          I build intelligent, scalable digital systems — from production-ready REST APIs in
-          <strong class="text-orange-400 font-semibold">Go</strong> and AI-powered backends in
-          <strong class="text-orange-400 font-semibold">Python</strong>, to polished frontend
-          experiences with <strong class="text-orange-400 font-semibold">React &amp; Tailwind CSS</strong>.
-          Based in Nigeria, building for the world.
-        </p>
+        <div
+            class="order-2 lg:order-1">
 
-        <!-- Stats row -->
-        <div class="flex flex-wrap gap-6 mb-10 reveal">
-          <div>
-            <div class="text-2xl font-display font-bold text-orange-400">5+</div>
-            <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Projects Shipped</div>
-          </div>
-          <div class="w-px bg-gray-700"></div>
-          <div>
-            <div class="text-2xl font-display font-bold text-sky-400">3+</div>
-            <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Certifications</div>
-          </div>
-          <div class="w-px bg-gray-700"></div>
-          <div>
-            <div class="text-2xl font-display font-bold text-purple-400">4</div>
-            <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Languages</div>
-          </div>
-        </div>
+            <span
+                class="inline-flex items-center gap-2 rounded-full border border-brand-sky/20 bg-brand-sky/10 px-4 py-2 text-sm font-medium text-brand-sky">
 
-        <!-- CTAs -->
-        <div class="flex flex-wrap gap-3 reveal">
-          <!-- Download CV -->
-          <a href="assets/Michael-Jinks-CV.pdf" download
-             class="btn-primary">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-            Download CV
-          </a>
-          <!-- View Projects -->
-          <a href="#projects"
-             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-white/20 text-white font-semibold text-sm hover:border-orange-400 hover:text-orange-400 transition-all duration-200 active:scale-95">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0l-7 7m7-7l-7-7"/></svg>
-            View Projects
-          </a>
-          <!-- Blog -->
-          <a href="blog.html" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-sky-400/40 text-sky-300 font-semibold text-sm hover:bg-sky-500/10 transition-all duration-200 active:scale-95">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-            Read My Blog
-          </a>
-        </div>
-      </div>
+                <span class="h-2 w-2 animate-pulse rounded-full bg-brand-sky"></span>
 
-      <!-- RIGHT: Portrait ─────────────────────────────────── -->
-      <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal">
-        <div class="relative">
-          <!-- Decorative rings -->
-          <div class="absolute -inset-4 rounded-full border border-orange-500/20 animate-pulse-slow" aria-hidden="true"></div>
-          <div class="absolute -inset-8 rounded-full border border-sky-500/10" aria-hidden="true"></div>
+                Available for Work
 
-          <!-- Photo container -->
-          <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden
-                      border-4 border-orange-500/50 shadow-premium animate-float">
-            <!-- Skeleton loader -->
-            <div id="heroImgSkeleton" class="absolute inset-0 skeleton rounded-full"></div>
-            <img src="assets/portrait.jpg" alt="Abuashia Michael Jinks — AI Engineer and Full Stack Developer"
-                 class="w-full h-full object-cover object-top"
-                 loading="eager"
-                 onload="document.getElementById('heroImgSkeleton').style.display='none'" />
-          </div>
+            </span>
 
-          <!-- Floating badge: location -->
-          <div class="absolute -bottom-4 -left-4 bg-white dark:bg-navy-900 rounded-2xl shadow-premium
-                      px-4 py-2.5 flex items-center gap-2 border border-gray-100 dark:border-navy-700">
-            <span class="text-lg">📍</span>
-            <div>
-              <div class="text-xs font-bold text-navy-900 dark:text-white">Abuja, Nigeria</div>
-              <div class="text-xs text-gray-400">Open to Remote</div>
+            <h1
+                class="mt-8 text-5xl font-black leading-tight tracking-tight text-brand-navy dark:text-white md:text-6xl xl:text-7xl">
+
+                Building
+
+                <span class="bg-gradient-to-r from-brand-sky via-brand-purple to-brand-orange bg-clip-text text-transparent">
+
+                    Modern Digital Experiences
+
+                </span>
+
+            </h1>
+
+            <p
+                class="mt-8 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+                I'm Abuashia Michael Jinks, a Full Stack Developer and AI Engineer
+                focused on scalable backend systems, intelligent web applications,
+                automation and exceptional user experiences.
+
+            </p>
+
+            <div
+                class="mt-10 flex flex-wrap gap-4">
+
+                <a
+                    href="#projects"
+                    class="inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-4 font-semibold text-white shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-xl hover:shadow-orange-500/40">
+
+                    View Projects
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </a>
+
+                <a
+                    href="#contact"
+                    class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 font-semibold text-slate-800 transition-all duration-300 hover:border-brand-sky hover:text-brand-sky dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+
+                    Contact Me
+
+                </a>
+
+                <a
+                    href="assets/Abuashia_Michael_Jinks_CV.pdf"
+                    class="inline-flex items-center gap-2 rounded-full px-4 py-4 font-semibold transition-all duration-300 hover:text-brand-orange">
+
+                    <i class="ph ph-download-simple"></i>
+
+                    Download CV
+
+                </a>
+
             </div>
-          </div>
 
-          <!-- Floating badge: stack -->
-          <div class="absolute -top-4 -right-4 bg-white dark:bg-navy-900 rounded-2xl shadow-premium
-                      px-4 py-2.5 flex items-center gap-2 border border-gray-100 dark:border-navy-700">
-            <span class="text-lg">⚡</span>
-            <div>
-              <div class="text-xs font-bold text-navy-900 dark:text-white">Go · Python · React</div>
-              <div class="text-xs text-gray-400">Full Stack &amp; AI</div>
+            <div
+                class="mt-14 flex flex-wrap gap-10">
+
+                <div>
+
+                    <h3
+                        class="text-3xl font-black text-brand-sky">
+
+                        20+
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+
+                        Completed Projects
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        class="text-3xl font-black text-brand-purple">
+
+                        Full Stack
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+
+                        Web Development
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        class="text-3xl font-black text-brand-orange">
+
+                        AI
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+
+                        Automation & ML
+
+                    </p>
+
+                </div>
+
             </div>
-          </div>
+
         </div>
-      </div>
 
-    </div><!-- /grid -->
+        <!-- Right Column -->
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-      <span class="text-xs text-gray-400 font-mono">scroll</span>
-      <div class="w-px h-10 bg-gradient-to-b from-gray-400 to-transparent"></div>
+        <div
+            class="order-1 flex justify-center lg:order-2 lg:justify-end">
+
+            <div
+                class="relative">
+
+                <div
+                    class="absolute inset-0 rounded-full bg-gradient-to-br from-brand-sky via-brand-purple to-brand-orange opacity-25 blur-3xl"></div>
+
+                <div
+                    class="relative overflow-hidden rounded-[2rem] border border-white/40 bg-white/30 shadow-2xl backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/40">
+
+                    <img
+                        src="assets/images/profile.webp"
+                        alt="Abuashia Michael Jinks"
+                        class="h-[560px] w-[420px] object-cover">
+
+                </div>
+
+                <div
+                    class="absolute -left-10 bottom-10 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl dark:border-slate-700 dark:bg-slate-900">
+
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-sky/10 text-brand-sky">
+
+                            <i class="ph ph-code text-2xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4
+                                class="font-semibold">
+
+                                Full Stack Developer
+
+                            </h4>
+
+                            <p
+                                class="text-sm text-slate-500 dark:text-slate-400">
+
+                                Go • Python • JavaScript
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="absolute -right-8 top-10 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-xl dark:border-slate-700 dark:bg-slate-900">
+
+                    <div
+                        class="flex items-center gap-3">
+
+                        <i
+                            class="ph ph-brain text-2xl text-brand-purple"></i>
+
+                        <div>
+
+                            <p
+                                class="text-xs uppercase tracking-wide text-slate-500">
+
+                                Focus
+
+                            </p>
+
+                            <p
+                                class="font-semibold">
+
+                                AI Engineering
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
+</section>
+<section
+    id="about"
+    class="relative py-28">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="mx-auto max-w-3xl text-center">
+
+            <span
+                class="inline-flex rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-semibold text-brand-orange">
+
+                About Me
+
+            </span>
+
+            <h2
+                class="mt-6 text-4xl font-black tracking-tight text-brand-navy dark:text-white md:text-5xl">
+
+                Passionate about building
+                <span class="text-brand-sky">
+                    scalable software
+                </span>
+                that solves real problems.
+
+            </h2>
+
+            <p
+                class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+                I enjoy designing modern digital products that combine
+                clean user experiences, scalable architectures and intelligent
+                automation. My current focus is Full Stack Development,
+                Artificial Intelligence, Backend Engineering and Cloud-native
+                applications.
+
+            </p>
+
+        </div>
+
+        <div
+            class="mt-20 grid gap-8 lg:grid-cols-2">
+
+            <div
+                class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+
+                <div
+                    class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-sky/10 text-brand-sky">
+
+                    <i class="ph ph-user text-3xl"></i>
+
+                </div>
+
+                <h3
+                    class="text-2xl font-bold">
+
+                    Who I Am
+
+                </h3>
+
+                <p
+                    class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
+
+                    I am a Full Stack Developer currently training in
+                    Full Stack Development and AI/ML at Turing Tech LLC.
+                    I enjoy transforming ideas into reliable applications
+                    using modern technologies while continuously improving
+                    my engineering skills.
+
+                </p>
+
+                <p
+                    class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
+
+                    My long-term goal is to build intelligent software
+                    systems that automate workflows, improve productivity
+                    and deliver exceptional user experiences.
+
+                </p>
+
+            </div>
+
+            <div
+                class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+
+                <div
+                    class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-purple/10 text-brand-purple">
+
+                    <i class="ph ph-target text-3xl"></i>
+
+                </div>
+
+                <h3
+                    class="text-2xl font-bold">
+
+                    Career Objective
+
+                </h3>
+
+                <p
+                    class="mt-5 leading-8 text-slate-600 dark:text-slate-400">
+
+                    To contribute to innovative engineering teams by building
+                    scalable web platforms, backend systems and AI-powered
+                    applications while continuously learning emerging
+                    technologies and software architecture best practices.
+
+                </p>
+
+                <div
+                    class="mt-8 grid grid-cols-2 gap-4">
+
+                    <div
+                        class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-800">
+
+                        <h4
+                            class="text-3xl font-black text-brand-sky">
+
+                            Go
+
+                        </h4>
+
+                        <p
+                            class="mt-2 text-sm text-slate-500">
+
+                            Backend APIs
+
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-800">
+
+                        <h4
+                            class="text-3xl font-black text-brand-orange">
+
+                            AI
+
+                        </h4>
+
+                        <p
+                            class="mt-2 text-sm text-slate-500">
+
+                            Intelligent Systems
+
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-800">
+
+                        <h4
+                            class="text-3xl font-black text-brand-purple">
+
+                            Web
+
+                        </h4>
+
+                        <p
+                            class="mt-2 text-sm text-slate-500">
+
+                            Full Stack Apps
+
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="rounded-2xl bg-slate-50 p-5 dark:bg-slate-800">
+
+                        <h4
+                            class="text-3xl font-black text-brand-sky">
+
+                            UX
+
+                        </h4>
+
+                        <p
+                            class="mt-2 text-sm text-slate-500">
+
+                            Modern Interfaces
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section
+    id="skills"
+    class="py-28 bg-slate-50 dark:bg-slate-950/40">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="text-center">
+
+            <span
+                class="inline-flex rounded-full bg-brand-sky/10 px-4 py-2 text-sm font-semibold text-brand-sky">
+
+                Skills & Technologies
+
+            </span>
+
+            <h2
+                class="mt-6 text-4xl font-black tracking-tight text-brand-navy dark:text-white md:text-5xl">
+
+                Building with modern technologies
+
+            </h2>
+
+            <p
+                class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+                I enjoy learning continuously and using the right tools to build
+                fast, scalable and maintainable applications.
+
+            </p>
+
+        </div>
+
+        <!-- Technologies Learned -->
+
+        <div
+            id="skills-learned"
+            class="mt-20">
+
+            <div class="mb-10 flex items-center gap-4">
+
+                <div
+                    class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-sky/10 text-brand-sky">
+
+                    <i class="ph ph-check-circle text-2xl"></i>
+
+                </div>
+
+                <div>
+
+                    <h3
+                        class="text-2xl font-bold">
+
+                        Technologies Learned
+
+                    </h3>
+
+                    <p
+                        class="text-slate-500 dark:text-slate-400">
+
+                        Production-ready tools and technologies.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-file-html text-5xl text-orange-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">HTML5</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Semantic and accessible markup.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-palette text-5xl text-blue-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">CSS3</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Responsive layouts and animations.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-wind text-5xl text-cyan-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">Tailwind CSS</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Utility-first responsive UI development.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-brackets-curly text-5xl text-yellow-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">JavaScript</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Modern ES6+ frontend development.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-code text-5xl text-cyan-600"></i>
+                    <h4 class="mt-6 text-xl font-bold">Go</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Backend APIs and scalable services.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-database text-5xl text-emerald-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">SQLite</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Lightweight relational databases.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-git-branch text-5xl text-red-500"></i>
+                    <h4 class="mt-6 text-xl font-bold">Git & GitHub</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Version control and collaboration.
+                    </p>
+                </div>
+
+                <div class="rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                    <i class="ph ph-terminal-window text-5xl text-slate-700 dark:text-slate-300"></i>
+                    <h4 class="mt-6 text-xl font-bold">Linux</h4>
+                    <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Development workflows and automation.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Currently Learning -->
+
+        <div
+            id="skills-learning"
+            class="mt-24">
+
+            <h3 class="text-2xl font-bold">
+
+                Currently Learning
+
+            </h3>
+
+            <div
+                class="mt-10 flex flex-wrap gap-4">
+
+                <span class="rounded-full bg-brand-orange px-5 py-3 font-medium text-white">
+                    AI Engineering
+                </span>
+
+                <span class="rounded-full bg-brand-purple px-5 py-3 font-medium text-white">
+                    Prompt Engineering
+                </span>
+
+                <span class="rounded-full bg-brand-sky px-5 py-3 font-medium text-white">
+                    Machine Learning
+                </span>
+
+                <span class="rounded-full bg-emerald-600 px-5 py-3 font-medium text-white">
+                    Python
+                </span>
+
+                <span class="rounded-full bg-slate-900 px-5 py-3 font-medium text-white">
+                    Docker
+                </span>
+
+                <span class="rounded-full bg-indigo-600 px-5 py-3 font-medium text-white">
+                    APIs
+                </span>
+
+                <span class="rounded-full bg-pink-600 px-5 py-3 font-medium text-white">
+                    AI Agents
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Core Competencies -->
+
+        <div
+            id="skills-soft"
+            class="mt-24">
+
+            <h3 class="text-2xl font-bold">
+
+                Core Competencies
+
+            </h3>
+
+            <div
+                class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    Problem Solving
+                </div>
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    Backend Development
+                </div>
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    REST API Design
+                </div>
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    Responsive Web Design
+                </div>
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    AI-assisted Development
+                </div>
+
+                <div class="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+                    Continuous Learning
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section
+    id="projects"
+    class="py-28">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="text-center">
+
+            <span
+                class="inline-flex rounded-full bg-brand-purple/10 px-4 py-2 text-sm font-semibold text-brand-purple">
+
+                Featured Projects
+
+            </span>
+
+            <h2
+                class="mt-6 text-4xl font-black tracking-tight text-brand-navy dark:text-white md:text-5xl">
+
+                Projects I've Built
+
+            </h2>
+
+            <p
+                class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+                These projects showcase my experience with full stack
+                development, backend engineering, AI-assisted development and
+                responsive user interface design.
+
+            </p>
+
+        </div>
+
+        <div
+            class="mt-20 grid gap-8 lg:grid-cols-2">
+
+            <!-- Project -->
+
+            <article
+                class="group overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+
+                <div
+                    class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+
+                    <img
+                        src="assets/images/projects/mamaputonline.webp"
+                        alt="MamaPutOnline"
+                        class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+
+                </div>
+
+                <div class="p-8">
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700 dark:bg-orange-900/40 dark:text-orange-300">HTML</span>
+
+                        <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">Tailwind CSS</span>
+
+                        <span class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-semibold text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300">JavaScript</span>
+
+                    </div>
+
+                    <h3
+                        class="mt-6 text-2xl font-bold">
+
+                        MamaPutOnline
+
+                    </h3>
+
+                    <p
+                        class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
+
+                        A modern restaurant landing page built with a
+                        mobile-first approach featuring premium UI,
+                        responsive layouts, animations and optimized
+                        performance.
+
+                    </p>
+
+                    <div
+                        class="mt-8 flex items-center gap-4">
+
+                        <a
+                            href="#"
+                            class="inline-flex items-center gap-2 rounded-xl bg-brand-orange px-5 py-3 font-semibold text-white transition hover:bg-orange-600">
+
+                            Live Demo
+
+                            <i class="ph ph-arrow-up-right"></i>
+
+                        </a>
+
+                        <a
+                            href="#"
+                            class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-semibold transition hover:border-brand-sky hover:text-brand-sky dark:border-slate-700">
+
+                            GitHub
+
+                            <i class="ph ph-github-logo"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article
+                class="group overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+
+                <div
+                    class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
+
+                    <img
+                        src="assets/images/projects/nexus.webp"
+                        alt="Nexus"
+                        class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+
+                </div>
+
+                <div class="p-8">
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">Tailwind</span>
+
+                        <span class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-semibold text-yellow-700 dark:bg-yellow-900/40 dark:text-yellow-300">JavaScript</span>
+
+                        <span class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">Responsive UI</span>
+
+                    </div>
+
+                    <h3
+                        class="mt-6 text-2xl font-bold">
+
+                        Nexus
+
+                    </h3>
+
+                    <p
+                        class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
+
+                        A modern responsive landing page focused on
+                        elegant layouts, performance optimization and
+                        component-driven development.
+
+                    </p>
+
+                    <div
+                        class="mt-8 flex items-center gap-4">
+
+                        <a
+                            href="#"
+                            class="inline-flex items-center gap-2 rounded-xl bg-brand-orange px-5 py-3 font-semibold text-white transition hover:bg-orange-600">
+
+                            Live Demo
+
+                        </a>
+
+                        <a
+                            href="#"
+                            class="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 font-semibold transition hover:border-brand-sky hover:text-brand-sky dark:border-slate-700">
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article
+                class="group overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900">
+
+                <div
+                    class="flex aspect-video items-center justify-center bg-gradient-to-br from-brand-sky via-brand-purple to-brand-orange">
+
+                    <i
+                        class="ph ph-check-square-offset text-8xl text-white/80"></i>
+
+                </div>
+
+                <div class="p-8">
+
+                    <h3
+                        class="text-2xl font-bold">
+
+                        Smart Todo API
+
+                    </h3>
+
+                    <p
+                        class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
+
+                        RESTful task management backend built with Go,
+                        Fiber and SQLite featuring CRUD operations,
+                        structured APIs and scalable architecture.
+
+                    </p>
+
+                    <div
+                        class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">Go</span>
+
+                        <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">Fiber</span>
+
+                        <span class="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 dark:bg-slate-700 dark:text-slate-200">SQLite</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Project -->
+
+            <article
+                class="group overflow-hidden rounded-3xl border border-dashed border-brand-sky/40 bg-gradient-to-br from-brand-sky/5 to-brand-purple/5 p-10 transition hover:-translate-y-2 hover:shadow-xl dark:border-brand-sky/20">
+
+                <div
+                    class="flex h-full flex-col justify-center">
+
+                    <i
+                        class="ph ph-rocket-launch text-6xl text-brand-sky"></i>
+
+                    <h3
+                        class="mt-8 text-3xl font-bold">
+
+                        More Projects Coming...
+
+                    </h3>
+
+                    <p
+                        class="mt-6 leading-8 text-slate-600 dark:text-slate-400">
+
+                        I'm actively building new AI tools,
+                        full-stack applications and automation
+                        systems. Stay tuned for future releases.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<section
+    id="contact"
+    class="py-28 bg-slate-50 dark:bg-slate-950/40">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+
+        <div class="text-center">
+
+            <span
+                class="inline-flex rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-semibold text-brand-orange">
+
+                Contact
+
+            </span>
+
+            <h2
+                class="mt-6 text-4xl font-black tracking-tight text-brand-navy dark:text-white md:text-5xl">
+
+                Let's Build Something Amazing
+
+            </h2>
+
+            <p
+                class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+
+                Whether you have an idea, a project or simply want to connect,
+                I'd love to hear from you.
+
+            </p>
+
+        </div>
+
+        <div
+            class="mt-20 grid gap-12 lg:grid-cols-5">
+
+            <!-- Contact Cards -->
+
+            <div
+                class="space-y-6 lg:col-span-2">
+
+                <a
+                    href="mailto:your@email.com"
+                    class="flex items-center gap-5 rounded-3xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
+
+                        <i class="ph ph-envelope-simple text-2xl"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-sm text-slate-500">
+
+                            Email
+
+                        </p>
+
+                        <h3 class="font-semibold">
+
+                            your@email.com
+
+                        </h3>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    class="flex items-center gap-5 rounded-3xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white">
+
+                        <i class="ph ph-github-logo text-2xl"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-sm text-slate-500">
+
+                            GitHub
+
+                        </p>
+
+                        <h3 class="font-semibold">
+
+                            github.com/yourname
+
+                        </h3>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    class="flex items-center gap-5 rounded-3xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-500 text-white">
+
+                        <i class="ph ph-linkedin-logo text-2xl"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-sm text-slate-500">
+
+                            LinkedIn
+
+                        </p>
+
+                        <h3 class="font-semibold">
+
+                            Connect with me
+
+                        </h3>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- Contact Form -->
+
+            <div
+                class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:col-span-3">
+
+                <form
+                    id="contact-form"
+                    class="space-y-6">
+
+                    <div
+                        class="grid gap-6 md:grid-cols-2">
+
+                        <div>
+
+                            <label
+                                class="mb-2 block font-medium">
+
+                                Name
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-sky dark:border-slate-700 dark:bg-slate-950">
+
+                        </div>
+
+                        <div>
+
+                            <label
+                                class="mb-2 block font-medium">
+
+                                Email
+
+                            </label>
+
+                            <input
+                                type="email"
+                                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-sky dark:border-slate-700 dark:bg-slate-950">
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            class="mb-2 block font-medium">
+
+                            Subject
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-sky dark:border-slate-700 dark:bg-slate-950">
+
+                    </div>
+
+                    <div>
+
+                        <label
+                            class="mb-2 block font-medium">
+
+                            Message
+
+                        </label>
+
+                        <textarea
+                            rows="6"
+                            class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-sky dark:border-slate-700 dark:bg-slate-950"></textarea>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="inline-flex items-center gap-2 rounded-full bg-brand-orange px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600">
+
+                        Send Message
+
+                        <i class="ph ph-paper-plane-tilt"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+</main>
 
-<!-- ════════════════════════════════════════════════════════════
-     ABOUT SECTION
-════════════════════════════════════════════════════════════ -->
-<section id="about" aria-label="About Me" class="section-light">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<footer
+    class="border-t border-slate-200 bg-slate-950 py-12 text-white dark:border-slate-800">
 
-      <!-- Photo column ─────────────────────────────────────── -->
-      <div class="flex justify-center lg:justify-start reveal">
-        <div class="relative">
-          <!-- Blob background -->
-          <div class="absolute -inset-6 bg-gradient-to-br from-orange-100 to-sky-100
-                      dark:from-orange-900/20 dark:to-sky-900/20
-                      portrait-frame opacity-80" aria-hidden="true"></div>
+    <div
+        class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 lg:flex-row lg:px-8">
 
-          <!-- Main photo -->
-          <div class="relative w-72 h-80 md:w-80 md:h-96 portrait-frame portrait-frame-hover overflow-hidden
-                      border-4 border-white dark:border-navy-800 shadow-premium transition-all duration-1000">
-            <div id="aboutImgSkeleton" class="absolute inset-0 skeleton"></div>
-            <img src="assets/portrait.jpg"
-                 alt="Michael Jinks Abuashia — professional portrait"
-                 class="w-full h-full object-cover object-top"
-                 loading="lazy"
-                 onload="document.getElementById('aboutImgSkeleton').style.display='none'" />
-          </div>
-
-          <!-- Decorative accent -->
-          <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-orange-500 rounded-2xl -z-10 opacity-80" aria-hidden="true"></div>
-          <div class="absolute -top-6 -left-6 w-16 h-16 bg-sky-400 rounded-2xl -z-10 opacity-60" aria-hidden="true"></div>
-
-          <!-- Experience badge -->
-          <div class="absolute -right-4 bottom-16 bg-navy-900 text-white rounded-2xl shadow-premium
-                      px-4 py-3 text-center min-w-[90px] border border-navy-700">
-            <div class="font-display text-2xl font-bold text-orange-400">BSc</div>
-            <div class="text-xs text-gray-300 leading-tight">Mech. Eng.<br/>Technology</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copy column ──────────────────────────────────────── -->
-      <div class="reveal">
-        <p class="section-label">Who I Am</p>
-        <h2 class="section-title mb-6">
-          Engineer at the<br/>
-          <span class="text-gradient bg-gradient-to-r from-orange-500 to-sky-500 bg-clip-text text-transparent">
-            intersection of AI &amp; Web
-          </span>
-        </h2>
-
-        <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-          <p>
-            I'm <strong class="text-navy-900 dark:text-white font-semibold">Abuashia Michael Jinks</strong> — a
-            Full Stack Developer and AI/ML Engineer in training under <strong class="text-orange-500">Turing Tech LLC</strong>,
-            with a B.Sc. in Mechanical Engineering Technology from Modibbo Adama University, Yola.
-          </p>
-          <p>
-            My engineering background gave me a precision-first mindset that I now apply to software:
-            building <strong class="text-navy-900 dark:text-white">scalable REST APIs</strong> in Go,
-            designing <strong class="text-navy-900 dark:text-white">intelligent backend systems</strong> in Python,
-            and crafting clean, responsive front-ends with React and Tailwind CSS.
-          </p>
-          <p>
-            I'm deeply passionate about <strong class="text-orange-500">prompt engineering</strong> and
-            integrating AI/ML capabilities into real-world products — from vibe-coded MVPs to production-ready platforms.
-            Every system I build is designed to be <em>efficient, readable, and built to last</em>.
-          </p>
-        </div>
-
-        <!-- Key facts grid -->
-        <div class="grid grid-cols-2 gap-4 mt-8">
-          <div class="card p-4">
-            <div class="text-2xl mb-1">🎓</div>
-            <div class="text-sm font-bold text-navy-900 dark:text-white">Education</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">B.Sc. Mechanical Eng. Tech.<br/>Modibbo Adama University</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-2xl mb-1">📜</div>
-            <div class="text-sm font-bold text-navy-900 dark:text-white">Certifications</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">PCEP Python · Go Backend<br/>Intro to Python (U of Michigan)</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-2xl mb-1">🌍</div>
-            <div class="text-sm font-bold text-navy-900 dark:text-white">Languages</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">English (Native) · Hausa (B1)<br/>German &amp; Chinese (A1–A2)</div>
-          </div>
-          <div class="card p-4">
-            <div class="text-2xl mb-1">💼</div>
-            <div class="text-sm font-bold text-navy-900 dark:text-white">Work Mode</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">Remote · Hybrid · On-Site<br/>Abuja, Nigeria</div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="assets/Michael-Jinks-CV.pdf" download class="btn-primary">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-            Download Full CV
-          </a>
-          <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noopener" class="btn-secondary">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-    </div><!-- /grid -->
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     SKILLS SECTION
-════════════════════════════════════════════════════════════ -->
-<section id="skills" aria-label="Skills" class="section-dark">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Heading -->
-    <div class="text-center mb-16 reveal">
-      <p class="section-label">What I Work With</p>
-      <h2 class="section-title mx-auto">My Technical Arsenal</h2>
-      <p class="section-subtitle mx-auto text-center">
-        A curated stack of technologies that let me build intelligent, production-ready systems from backend to frontend.
-      </p>
-    </div>
-
-    <!-- ── Technologies Learned ── -->
-    <div id="skills-learned" class="mb-14 reveal">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="text-2xl">✅</span>
-        <h3 class="font-display text-2xl font-bold text-navy-900 dark:text-white">Technologies I've Mastered</h3>
-        <div class="flex-1 h-px bg-gradient-to-r from-orange-400/40 to-transparent"></div>
-      </div>
-      <div class="flex flex-wrap gap-2.5">
-        <!-- Languages & Core -->
-        <span class="skill-tag"><span class="text-sky-500">⬡</span> Go (Golang)</span>
-        <span class="skill-tag"><span class="text-yellow-500">🐍</span> Python</span>
-        <span class="skill-tag"><span class="text-orange-500">&lt;/&gt;</span> HTML5</span>
-        <span class="skill-tag"><span class="text-blue-500">🎨</span> CSS3</span>
-        <span class="skill-tag"><span class="text-cyan-500">💨</span> Tailwind CSS</span>
-        <!-- Backend -->
-        <span class="skill-tag"><span class="text-green-500">🔌</span> REST APIs</span>
-        <span class="skill-tag"><span class="text-purple-500">⚡</span> Concurrency (Go)</span>
-        <span class="skill-tag"><span class="text-red-500">🗄</span> MySQL</span>
-        <span class="skill-tag"><span class="text-red-600">📦</span> Redis</span>
-        <!-- Cloud & DevOps -->
-        <span class="skill-tag"><span class="text-blue-600">🐳</span> Docker</span>
-        <span class="skill-tag"><span class="text-orange-400">☁</span> Cloudflare R2</span>
-        <span class="skill-tag"><span class="text-gray-600 dark:text-gray-300">📁</span> Git &amp; GitHub</span>
-        <!-- CAD / Engineering -->
-        <span class="skill-tag">📐 AutoCAD</span>
-        <span class="skill-tag">🔩 SolidWorks</span>
-        <span class="skill-tag">⚙️ Autodesk Inventor</span>
-        <!-- Concepts -->
-        <span class="skill-tag">🧪 Unit Testing</span>
-        <span class="skill-tag">🌐 Network Programming</span>
-        <span class="skill-tag">🛠 Debugging</span>
-        <span class="skill-tag">📄 Data Serialization</span>
-        <span class="skill-tag">🗃 DB Management</span>
-        <span class="skill-tag">💻 Bash / PowerShell</span>
-      </div>
-    </div>
-
-    <!-- ── Currently Learning ── -->
-    <div id="skills-learning" class="mb-14 reveal">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="text-2xl">🔄</span>
-        <h3 class="font-display text-2xl font-bold text-navy-900 dark:text-white">Currently Leveling Up</h3>
-        <div class="flex-1 h-px bg-gradient-to-r from-sky-400/40 to-transparent"></div>
-      </div>
-      <div class="flex flex-wrap gap-2.5">
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          🤖 AI &amp; Machine Learning
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          🧠 Large Language Models (LLMs)
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          ✍️ Prompt Engineering
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          ⚛️ React.js
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          🟨 JavaScript (ES2025+)
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          🐍 Advanced Python
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          🔗 LangChain / LlamaIndex
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          📊 NumPy / Pandas
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          ▲ Next.js
-        </span>
-        <span class="skill-tag border-orange-400/50 bg-orange-50 dark:bg-orange-900/10 text-orange-700 dark:text-orange-300">
-          ☁️ Vercel Deployment
-        </span>
-      </div>
-    </div>
-
-    <!-- ── Non-Technical Skills ── -->
-    <div id="skills-soft" class="reveal">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="text-2xl">🧠</span>
-        <h3 class="font-display text-2xl font-bold text-navy-900 dark:text-white">Non-Technical Superpowers</h3>
-        <div class="flex-1 h-px bg-gradient-to-r from-purple-400/40 to-transparent"></div>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Soft skill cards -->
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">🎯</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Problem Decomposition</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Engineering background sharpens my ability to break down complex systems into clean, solvable parts.</p>
-        </div>
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">🤝</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Cross-Disciplinary Collaboration</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Fluent at working across design, engineering, and business teams — bridging technical and non-technical worlds.</p>
-        </div>
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">⚡</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Rapid Technology Adoption</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Comfortably picks up new languages, frameworks, and paradigms — from CAD to Go in months.</p>
-        </div>
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">📝</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Technical Writing</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Clear documentation, API specs, and technical product writing honed through engineering projects.</p>
-        </div>
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">📊</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Analytical Thinking</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">Data-driven approach to debugging, architecture decisions, and product optimisation.</p>
-        </div>
-        <div class="card p-5 hover:-translate-y-1 transition-transform">
-          <div class="text-2xl mb-2">🌐</div>
-          <h4 class="font-bold text-navy-900 dark:text-white text-sm mb-1">Multilingual Communication</h4>
-          <p class="text-xs text-gray-500 dark:text-gray-400">English (native), Hausa (B1), German &amp; Chinese (A1–A2) — communicates across global teams.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     PROJECTS SECTION
-════════════════════════════════════════════════════════════ -->
-<section id="projects" aria-label="Projects" class="section-light">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="text-center mb-16 reveal">
-      <p class="section-label">What I've Built</p>
-      <h2 class="section-title">Projects &amp; Case Studies</h2>
-      <p class="section-subtitle mx-auto text-center">
-        A selection of real-world systems, experiments, and AI-powered products — built with precision and shipped with pride.
-      </p>
-    </div>
-
-    <!-- Projects grid: 1 col mobile, 2 tablet, 3 desktop -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-      <!-- ── Project 1: Portfolio ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-navy-900 to-navy-800 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-done">✅ Completed</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Personal Portfolio
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            Designed and deployed a clean, high-converting portfolio on GitHub Pages — showcasing career progress,
-            skills, and projects. Built with semantic HTML5 and Tailwind CSS. This very site you're reading.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">HTML5</span>
-            <span class="tech-span bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300">Tailwind CSS</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">JavaScript</span>
-            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">GitHub Pages</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <a href="https://abuashiamichael.xyz" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition-colors">
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 2: Nexus ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-sky-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-done">✅ Completed</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Nexus Digital Agency
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            Frontend for Nexus — a provider of digital services (web &amp; mobile app development, digital marketing).
-            Built a compelling landing page with conversion-focused design and smooth animations.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">HTML5</span>
-            <span class="tech-span bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300">Tailwind CSS</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">JavaScript</span>
-            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">GitHub Pages</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <a href="#" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-sky-500 text-white hover:bg-sky-600 transition-colors">
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 3: E-Commerce ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-purple-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-done">✅ Completed</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Lekki E-Commerce Site
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            Bespoke e-commerce frontend for a Lekki-based client offering personalized shopping experiences.
-            Designed for conversion with a clean product catalog, intuitive UX, and mobile-first layout.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">HTML5</span>
-            <span class="tech-span bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300">Tailwind CSS</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">JavaScript</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <a href="#"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-purple-500 text-white hover:bg-purple-600 transition-colors">
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 4: Redis Clone ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-red-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-done">✅ Completed</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Redis Clone (Go)
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            Built a simplified Redis clone in Go to master concurrency and networking. Implemented strings,
-            lists, and hash operations using Go's <code class="font-mono text-xs text-orange-500">net</code> package
-            for socket communication and in-memory data management.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go (Golang)</span>
-            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis Protocol</span>
-            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Networking</span>
-            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Concurrency</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-gray-200 dark:bg-navy-700 text-gray-500 dark:text-gray-400 cursor-not-allowed">
-              CLI Only
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 5: Vercel Clone ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-gray-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-done">✅ Completed</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Vercel Clone (Go)
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            A Vercel-inspired deployment platform — users deploy React projects directly from GitHub.
-            Redis for caching, Cloudflare R2 for file storage, Go backend, and Express for static file serving.
-            Automated CI/CD build pipeline.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go</span>
-            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis</span>
-            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Cloudflare R2</span>
-            <span class="tech-span bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">Express.js</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">GitHub API</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <a href="#"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 6: AI Assistant (Planned) ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-emerald-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-progress">🔄 In Progress</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            AI Chat Assistant API
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            A production-grade AI chat API backend in Go that integrates LLM providers.
-            Features streaming responses, conversation history, rate limiting, and a clean REST API.
-            Designed for embedding into any product.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go</span>
-            <span class="tech-span bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">LLM Integration</span>
-            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">REST API</span>
-            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Docker</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 cursor-default">
-              Coming Soon
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 7: ML Salary Predictor (Planned) ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-violet-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-upcoming">🔮 Upcoming</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            ML Salary Predictor
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            A machine learning web app that predicts tech salaries in Nigeria and Africa based on
-            skills, experience, and location. Built with Python, scikit-learn, and a React frontend.
-            Aims to help developers negotiate better compensation.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">Python</span>
-            <span class="tech-span bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">scikit-learn</span>
-            <span class="tech-span bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300">React</span>
-            <span class="tech-span bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">FastAPI</span>
-          </div>
-          <div class="flex gap-2">
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-400 cursor-not-allowed">
-              Coming Soon
-            </span>
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-purple-500/20 text-purple-600 dark:text-purple-400 cursor-default">
-              Planned
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 8: Prompt Engineering Toolkit (Planned) ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-teal-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-upcoming">🔮 Upcoming</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Prompt Engineering Toolkit
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            An open-source toolkit for developers and non-technical users to craft, test, and version
-            production prompts. Integrates with OpenAI, Anthropic, and open models. Features a visual
-            prompt editor, A/B testing, and output scoring.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Next.js</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">Python</span>
-            <span class="tech-span bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">LangChain</span>
-            <span class="tech-span bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">PostgreSQL</span>
-          </div>
-          <div class="flex gap-2">
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-400 cursor-not-allowed">
-              Coming Soon
-            </span>
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-teal-500/20 text-teal-600 dark:text-teal-400 cursor-default">
-              Planned
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ── Project 9: Go Task Queue ── -->
-      <article class="card group overflow-hidden hover:-translate-y-2 transition-all duration-300 reveal">
-        <div class="h-48 bg-gradient-to-br from-indigo-900 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center opacity-20">
-            <svg class="w-32 h-32 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute top-3 right-3">
-            <span class="badge-progress">🔄 In Progress</span>
-          </div>
-          <div class="absolute bottom-3 left-4 font-display font-bold text-xl text-white drop-shadow">
-            Distributed Task Queue
-          </div>
-        </div>
-        <div class="p-5">
-          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-            A distributed job queue system in Go — inspired by Celery but purpose-built for Go backends.
-            Supports delayed jobs, retries, priority queues, and real-time monitoring via a web dashboard.
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-5">
-            <span class="tech-span bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300">Go</span>
-            <span class="tech-span bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300">Redis</span>
-            <span class="tech-span bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">WebSockets</span>
-            <span class="tech-span bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Docker</span>
-          </div>
-          <div class="flex gap-2">
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 text-gray-600 dark:text-gray-300 hover:border-orange-400 hover:text-orange-500 transition-colors">
-              GitHub
-            </a>
-            <span class="flex-1 text-center text-xs font-semibold px-3 py-2 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 cursor-default">
-              In Dev
-            </span>
-          </div>
-        </div>
-      </article>
-
-    </div><!-- /grid -->
-
-    <!-- GitHub CTA -->
-    <div class="text-center mt-12 reveal">
-      <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-         class="btn-secondary inline-flex">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        See All Projects on GitHub
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     CONTACT SECTION
-════════════════════════════════════════════════════════════ -->
-<section id="contact" aria-label="Contact" class="section-dark">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="text-center mb-14 reveal">
-      <p class="section-label">Let's Work Together</p>
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-subtitle mx-auto text-center">
-        Have a project, an idea, or a role? I'd love to hear from you. I typically respond within 24 hours.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-      <!-- Contact Form ─────────────────────────────────────── -->
-      <div class="card p-8 reveal">
-        <h3 class="font-display text-xl font-bold text-navy-900 dark:text-white mb-6">Send a Message</h3>
-        <form id="contactForm" novalidate class="space-y-5">
-          <div>
-            <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Jane Doe"
-                   class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700
-                          bg-white dark:bg-navy-800 text-navy-900 dark:text-white
-                          placeholder-gray-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20
-                          outline-none transition-all" />
-            <p class="text-xs text-red-500 mt-1 hidden" id="nameError">Please enter your name.</p>
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="jane@company.com"
-                   class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700
-                          bg-white dark:bg-navy-800 text-navy-900 dark:text-white
-                          placeholder-gray-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20
-                          outline-none transition-all" />
-            <p class="text-xs text-red-500 mt-1 hidden" id="emailError">Please enter a valid email.</p>
-          </div>
-          <div>
-            <label for="subject" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Job opportunity / Project inquiry"
-                   class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700
-                          bg-white dark:bg-navy-800 text-navy-900 dark:text-white
-                          placeholder-gray-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20
-                          outline-none transition-all" />
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Message *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or opportunity…"
-                      class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700
-                             bg-white dark:bg-navy-800 text-navy-900 dark:text-white
-                             placeholder-gray-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20
-                             outline-none transition-all resize-none"></textarea>
-            <p class="text-xs text-red-500 mt-1 hidden" id="messageError">Please enter a message.</p>
-          </div>
-          <button type="submit" id="submitBtn"
-                  class="btn-primary w-full justify-center">
-            <span id="submitText">Send Message</span>
-            <svg id="submitIcon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-            <svg id="submitSpinner" class="w-4 h-4 animate-spin hidden" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-          </button>
-          <div id="formSuccess" class="hidden text-center py-3 px-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-xl text-emerald-700 dark:text-emerald-400 text-sm font-medium">
-            ✅ Message sent! I'll get back to you within 24 hours.
-          </div>
-          <div id="formError" class="hidden text-center py-3 px-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-red-700 dark:text-red-400 text-sm font-medium">
-            ❌ Something went wrong. Please email me directly.
-          </div>
-        </form>
-      </div>
-
-      <!-- Connect With Me ──────────────────────────────────── -->
-      <div class="reveal space-y-6">
         <div>
-          <h3 class="font-display text-xl font-bold text-navy-900 dark:text-white mb-2">Connect With Me</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Whether it's an AI/ML role, a full-stack build, a consulting gig, or just a conversation about
-            technology in Africa — my inbox is always open.
-          </p>
+
+            <h3
+                class="text-2xl font-black">
+
+                Michael<span class="text-brand-orange">.</span>Jinks
+
+            </h3>
+
+            <p
+                class="mt-3 text-slate-400">
+
+                Full Stack Developer • AI Engineer • Backend Developer
+
+            </p>
+
         </div>
 
-        <!-- Contact details -->
-        <div class="space-y-4">
-          <a href="mailto:michaeljinksa@gmail.com"
-             class="card p-4 flex items-center gap-4 hover:-translate-y-0.5 transition-all group">
-            <div class="w-11 h-11 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors">
-              <svg class="w-5 h-5 text-orange-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <div>
-              <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Email</div>
-              <div class="text-sm font-semibold text-navy-900 dark:text-white">michaeljinksa@gmail.com</div>
-            </div>
-          </a>
-          <div class="card p-4 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
-            <div>
-              <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Location</div>
-              <div class="text-sm font-semibold text-navy-900 dark:text-white">Abuja, Nigeria</div>
-              <div class="text-xs text-gray-400">Remote · Hybrid · On-Site</div>
-            </div>
-          </div>
+        <div
+            class="flex items-center gap-4">
+
+            <a
+                href="#"
+                class="rounded-full p-3 transition hover:bg-slate-800">
+
+                <i class="ph ph-github-logo text-2xl"></i>
+
+            </a>
+
+            <a
+                href="#"
+                class="rounded-full p-3 transition hover:bg-slate-800">
+
+                <i class="ph ph-linkedin-logo text-2xl"></i>
+
+            </a>
+
+            <a
+                href="#"
+                class="rounded-full p-3 transition hover:bg-slate-800">
+
+                <i class="ph ph-x-logo text-2xl"></i>
+
+            </a>
+
+            <a
+                href="#"
+                class="rounded-full p-3 transition hover:bg-slate-800">
+
+                <i class="ph ph-envelope-simple text-2xl"></i>
+
+            </a>
+
         </div>
-
-        <!-- Social links -->
-        <div>
-          <h4 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4">Find Me Online</h4>
-          <div class="grid grid-cols-2 gap-3">
-            <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noopener"
-               class="card p-4 flex items-center gap-3 hover:-translate-y-0.5 transition-all group">
-              <svg class="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 .774 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              <span class="text-sm font-semibold text-navy-900 dark:text-white">LinkedIn</span>
-            </a>
-            <a href="https://github.com/wanloq" target="_blank" rel="noopener"
-               class="card p-4 flex items-center gap-3 hover:-translate-y-0.5 transition-all group">
-              <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              <span class="text-sm font-semibold text-navy-900 dark:text-white">GitHub</span>
-            </a>
-            <a href="https://twitter.com/wanloq" target="_blank" rel="noopener"
-               class="card p-4 flex items-center gap-3 hover:-translate-y-0.5 transition-all group">
-              <svg class="w-5 h-5 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              <span class="text-sm font-semibold text-navy-900 dark:text-white">X / Twitter</span>
-            </a>
-            <a href="https://instagram.com/wanloq" target="_blank" rel="noopener"
-               class="card p-4 flex items-center gap-3 hover:-translate-y-0.5 transition-all group">
-              <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <span class="text-sm font-semibold text-navy-900 dark:text-white">Instagram</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /grid -->
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════════ -->
-<footer class="bg-navy-950 dark:bg-black border-t border-navy-800 py-6">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Desktop/Tablet: single line | Mobile: 3 lines -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-
-      <!-- Logo + Name -->
-      <div class="flex items-center gap-2.5 order-1">
-        <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
-          <span class="font-display font-bold text-white text-sm leading-none">M</span>
-        </div>
-        <span class="font-display font-bold text-white text-base tracking-tight">
-          Abuashia <span class="text-orange-400">Michael</span> Jinks
-        </span>
-      </div>
-
-      <!-- Copyright -->
-      <div class="order-3 sm:order-2">
-        <small class="text-gray-500 text-xs">
-          &copy; <span id="copyrightYear"></span> Abuashia Michael Jinks. All rights reserved.
-        </small>
-      </div>
-
-      <!-- Social icons -->
-      <div class="flex items-center gap-3 order-2 sm:order-3">
-        <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noopener" aria-label="LinkedIn"
-           class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-[#0077B5] flex items-center justify-center transition-colors">
-          <svg class="w-4 h-4 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://github.com/wanloq" target="_blank" rel="noopener" aria-label="GitHub"
-           class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-gray-700 flex items-center justify-center transition-colors">
-          <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-        <a href="https://twitter.com/wanloq" target="_blank" rel="noopener" aria-label="X / Twitter"
-           class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-gray-700 flex items-center justify-center transition-colors">
-          <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://instagram.com/wanloq" target="_blank" rel="noopener" aria-label="Instagram"
-           class="w-9 h-9 rounded-xl bg-navy-800 hover:bg-pink-600 flex items-center justify-center transition-colors">
-          <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-      </div>
 
     </div>
-  </div>
+
+    <div
+        class="mt-10 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+
+        © 2026 Abuashia Michael Jinks. All rights reserved.
+
+    </div>
+
 </footer>
 
-<!-- ════════════════════════════════════════════════════════════
-     BACK TO TOP BUTTON
-════════════════════════════════════════════════════════════ -->
-<button id="backToTop" aria-label="Back to top"
-        class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-xl bg-orange-500 text-white
-               shadow-glow flex items-center justify-center
-               opacity-0 pointer-events-none transition-all duration-300
-               hover:bg-orange-600 hover:scale-110 active:scale-95">
-  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-  </svg>
-</button>
+<script type="module" src="js/theme.js"></script>
+<script type="module" src="js/main.js"></script>
 
-<!-- ════════════════════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════════════════ -->
-<script>
-/* ── Dark Mode ────────────────────────────────────────────── */
-(function() {
-  const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (stored === 'dark' || (!stored && prefersDark)) {
-    root.classList.add('dark');
-  }
-})();
-
-document.addEventListener('DOMContentLoaded', function () {
-  const root       = document.documentElement;
-  const toggle     = document.getElementById('darkToggle');
-  const sunIcon    = document.getElementById('sunIcon');
-  const moonIcon   = document.getElementById('moonIcon');
-
-  function updateIcons() {
-    const isDark = root.classList.contains('dark');
-    sunIcon.classList.toggle('hidden', !isDark);
-    moonIcon.classList.toggle('hidden', isDark);
-  }
-  updateIcons();
-
-  toggle.addEventListener('click', () => {
-    root.classList.toggle('dark');
-    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-    updateIcons();
-  });
-
-  /* ── Mobile Menu ────────────────────────────────────────── */
-  const menuBtn    = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const line1      = document.querySelector('.menu-line1');
-  const line3      = document.querySelector('.menu-line3');
-  let menuOpen     = false;
-
-  function toggleMenu(open) {
-    menuOpen = open;
-    mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + 'px' : '0';
-    menuBtn.setAttribute('aria-expanded', open);
-    line1.style.transform = open ? 'rotate(45deg) translate(4px,4px)' : '';
-    line3.style.transform = open ? 'rotate(-45deg) translate(3px,-3px)' : '';
-    line3.style.width     = open ? '20px' : '';
-  }
-
-  menuBtn.addEventListener('click', () => toggleMenu(!menuOpen));
-
-  document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', () => toggleMenu(false));
-  });
-
-  /* ── Navbar scroll effect ───────────────────────────────── */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) navbar.classList.add('shadow-md');
-    else navbar.classList.remove('shadow-md');
-  }, { passive: true });
-
-  /* ── Scroll reveal ──────────────────────────────────────── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer  = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
-
-  /* ── Back to top ────────────────────────────────────────── */
-  const btt = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      btt.classList.remove('opacity-0','pointer-events-none');
-      btt.classList.add('opacity-100');
-    } else {
-      btt.classList.add('opacity-0','pointer-events-none');
-      btt.classList.remove('opacity-100');
-    }
-  }, { passive: true });
-  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  /* ── Copyright year ─────────────────────────────────────── */
-  document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-
-  /* ── Contact form ───────────────────────────────────────── */
-  const form        = document.getElementById('contactForm');
-  const submitBtn   = document.getElementById('submitBtn');
-  const submitText  = document.getElementById('submitText');
-  const submitIcon  = document.getElementById('submitIcon');
-  const submitSpinner = document.getElementById('submitSpinner');
-  const formSuccess = document.getElementById('formSuccess');
-  const formError   = document.getElementById('formError');
-
-  function showError(id, msg) {
-    const el = document.getElementById(id);
-    el.textContent = msg;
-    el.classList.remove('hidden');
-  }
-  function clearErrors() {
-    ['nameError','emailError','messageError'].forEach(id => {
-      document.getElementById(id).classList.add('hidden');
-    });
-  }
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    clearErrors();
-    formSuccess.classList.add('hidden');
-    formError.classList.add('hidden');
-
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    let valid = true;
-
-    if (!name)    { showError('nameError', 'Please enter your name.'); valid = false; }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showError('emailError', 'Please enter a valid email.'); valid = false;
-    }
-    if (!message) { showError('messageError', 'Please enter a message.'); valid = false; }
-    if (!valid)   return;
-
-    // Loading state
-    submitBtn.disabled = true;
-    submitText.textContent = 'Sending…';
-    submitIcon.classList.add('hidden');
-    submitSpinner.classList.remove('hidden');
-
-    try {
-      const subject = document.getElementById('subject').value.trim();
-      // Using Formspree as serverless API — replace YOUR_FORM_ID with your Formspree form ID
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message })
-      });
-
-      if (res.ok) {
-        formSuccess.classList.remove('hidden');
-        form.reset();
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (_) {
-      formError.classList.remove('hidden');
-    } finally {
-      submitBtn.disabled = false;
-      submitText.textContent = 'Send Message';
-      submitIcon.classList.remove('hidden');
-      submitSpinner.classList.add('hidden');
-    }
-  });
-
-  /* ── Active nav highlighting ────────────────────────────── */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.toggle(
-            'text-orange-500',
-            link.getAttribute('href') === '#' + entry.target.id
-          );
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => sectionObserver.observe(s));
-
-  /* ── Lazy image loading ─────────────────────────────────── */
-  if ('loading' in HTMLImageElement.prototype) {
-    document.querySelectorAll('img[loading="lazy"]').forEach(img => img.setAttribute('loading','lazy'));
-  }
-
-});
-</script>
 </body>
 </html>

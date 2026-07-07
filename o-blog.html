@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Abuashia Michael Jinks | Full Stack Developer</title>
+    
+    <meta name="description" content="Portfolio of Abuashia Michael Jinks, a premium Full Stack Developer, AI/ML Engineer, and Go Developer based in Nigeria. Expert in backend architecture and AI solutions.">
+    <meta name="keywords" content="AI Engineer Nigeria, Full Stack Developer Nigeria, AI Developer, Machine Learning Engineer, Prompt Engineer, AI Engineer Portfolio, Full Stack Portfolio, Go Developer, JavaScript Developer, Tailwind CSS Developer, AI Software Engineer, Remote AI Engineer, AI/ML Engineer, Frontend Developer, Backend Developer, Vibe Coding, Prompt Engineering Expert">
+    <meta name="author" content="Abuashia Michael Jinks">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+
+
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-slate-800 dark:bg-brand-navy dark:text-slate-200 transition-colors duration-300">
+
+    <header class="fixed top-0 w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="index.html" class="font-bold text-2xl tracking-tighter text-brand-navy dark:text-white">
+                        Michael<span class="text-brand-orange">.</span>Jinks
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                    <a href="index.html#home" class="hover:text-brand-sky transition-colors nav-link">Home</a>
+                    <a href="index.html#about" class="hover:text-brand-sky transition-colors nav-link">About</a>
+                    
+                    <div class="relative group">
+                        <button class="flex items-center hover:text-brand-sky transition-colors outline-none">
+                            Skills <i class="ph ph-caret-down ml-1"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 rounded-xl shadow-lg bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left">
+                            <div class="py-1" role="menu">
+                                <a href="index.html#skills-learned" class="block px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700">Technologies Learned</a>
+                                <a href="index.html#skills-learning" class="block px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700">Currently Learning</a>
+                                <a href="index.html#skills-soft" class="block px-4 py-2 text-sm hover:bg-slate-50 dark:hover:bg-slate-700">Core Competencies</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#projects" class="hover:text-brand-sky transition-colors nav-link">Projects</a>
+                    <a href="blog.html" class="hover:text-brand-sky transition-colors text-brand-purple nav-link">My Blog</a>
+                    
+                    <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none rounded-full text-sm p-2.5 transition-colors">
+                        <i class="ph ph-moon text-xl hidden dark:block" id="theme-toggle-dark-icon"></i>
+                        <i class="ph ph-sun text-xl block dark:hidden" id="theme-toggle-light-icon"></i>
+                    </button>
+
+                    <a href="index.html#contact" class="px-5 py-2.5 rounded-full bg-brand-navy dark:bg-white text-white dark:text-brand-navy hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 nav-link">Get in touch</a>
+                </nav>
+
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" type="button" class="text-slate-500 dark:text-slate-400 p-2">
+                        <i class="ph ph-moon text-xl hidden dark:block"></i>
+                        <i class="ph ph-sun text-xl block dark:hidden"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-800 dark:text-white hover:text-brand-sky focus:outline-none p-2">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 absolute w-full shadow-xl border-b border-slate-100 dark:border-slate-800">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col">
+                <a href="index.html#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50 dark:hover:bg-slate-800 nav-link-mobile">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50 dark:hover:bg-slate-800 nav-link-mobile">About</a>
+                <a href="index.html#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50 dark:hover:bg-slate-800 nav-link-mobile">Skills</a>
+                <a href="index.html#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50 dark:hover:bg-slate-800 nav-link-mobile">Projects</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-purple hover:bg-slate-50 dark:hover:bg-slate-800 nav-link-mobile">My Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 mt-4 text-center rounded-lg bg-brand-orange text-white font-medium hover:bg-orange-600 nav-link-mobile">Get in touch</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <div id="view-blog" class="relative pb-24 bg-brand-light dark:bg-brand-navy">
+            <!-- Blog Hero -->
+            <section class="pt-12 pb-16 px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-brand-dark">
+                <div class="max-w-4xl mx-auto text-center reveal active">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">The <span class="text-brand-purple">Vibe Coding</span> Chronicle</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Deep dives into AI, Machine Learning, Golang backend architecture, and the future of web development.</p>
+                </div>
+            </section>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    
+                    <!-- Main Feed Content -->
+                    <div class="lg:w-2/3 space-y-12" id="blog-feed">
+                        
+                        <!-- Article 1 -->
+                        <article class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 reveal group cursor-pointer hover:shadow-xl transition-all">
+                            <div class="h-64 sm:h-80 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="https://placehold.co/800x400/0f172a/ffffff?text=Golang+Concurrency" alt="Golang Concurrency" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 left-4 z-20">
+                                    <span class="bg-brand-sky text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Backend</span>
+                                </div>
+                            </div>
+                            <div class="p-8 sm:p-10">
+                                <div class="flex items-center text-sm text-slate-500 mb-4 space-x-4">
+                                    <span><i class="ph ph-calendar-blank mr-1"></i> Jun 24, 2026</span>
+                                    <span><i class="ph ph-clock mr-1"></i> 8 min read</span>
+                                </div>
+                                <h2 class="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-brand-sky transition-colors">Mastering Goroutines: A Deep Dive into Go's Concurrency Model</h2>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    While building a Redis clone, I realized the true power of Go lies not just in its simplicity, but in its robust concurrency model. In this post, we explore channels, wait groups, and avoiding deadlocks in production APIs.
+                                </p>
+                                <button class="text-brand-sky font-medium flex items-center group-hover:translate-x-2 transition-transform">
+                                    Read Full Story <i class="ph ph-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 reveal group cursor-pointer hover:shadow-xl transition-all">
+                            <div class="h-64 sm:h-80 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                                <img src="https://placehold.co/800x400/c084fc/ffffff?text=Prompt+Engineering" alt="Prompt Engineering" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 left-4 z-20">
+                                    <span class="bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">AI / ML</span>
+                                </div>
+                            </div>
+                            <div class="p-8 sm:p-10">
+                                <div class="flex items-center text-sm text-slate-500 mb-4 space-x-4">
+                                    <span><i class="ph ph-calendar-blank mr-1"></i> Jun 12, 2026</span>
+                                    <span><i class="ph ph-clock mr-1"></i> 6 min read</span>
+                                </div>
+                                <h2 class="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-brand-purple transition-colors">Systematic Prompt Engineering for AI Software Engineers</h2>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    "Vibe coding" is great, but deterministic outputs require deterministic inputs. Here is how I structure prompts to force LLMs to output robust, production-ready Python and React code without hallucinations.
+                                </p>
+                                <button class="text-brand-purple font-medium flex items-center group-hover:translate-x-2 transition-transform">
+                                    Read Full Story <i class="ph ph-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Loader -->
+                        <div class="flex justify-center py-8">
+                            <i class="ph ph-spinner-gap animate-spin-slow text-4xl text-brand-sky"></i>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="lg:w-1/3 space-y-8">
+                        <div class="bg-gradient-to-br from-brand-navy to-slate-800 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/20 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                            <h3 class="text-xl font-bold mb-2 relative z-10">Join the Dev List</h3>
+                            <p class="text-slate-300 text-sm mb-6 relative z-10">Get weekly updates on AI, Fullstack Dev, and tech portfolio optimization.</p>
+                            <form id="newsletter-form" class="relative z-10">
+                                <input type="email" placeholder="you@company.com" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-brand-orange mb-3 backdrop-blur-sm">
+                                <button type="submit" class="w-full py-3 rounded-xl bg-brand-orange hover:bg-orange-600 text-white font-bold transition-colors shadow-lg">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <h3 class="text-lg font-bold mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">Categories</h3>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="flex justify-between items-center text-slate-600 dark:text-slate-400 hover:text-brand-sky transition-colors group"><span>Backend (Go/Python)</span> <span class="bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded text-xs group-hover:bg-brand-sky group-hover:text-white transition-colors">12</span></a></li>
+                                <li><a href="#" class="flex justify-between items-center text-slate-600 dark:text-slate-400 hover:text-brand-purple transition-colors group"><span>AI & Machine Learning</span> <span class="bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded text-xs group-hover:bg-brand-purple group-hover:text-white transition-colors">8</span></a></li>
+                                <li><a href="#" class="flex justify-between items-center text-slate-600 dark:text-slate-400 hover:text-brand-orange transition-colors group"><span>Frontend Dev</span> <span class="bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded text-xs group-hover:bg-brand-orange group-hover:text-white transition-colors">15</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-3xl h-64 border border-dashed border-slate-300 dark:border-slate-600 flex items-center justify-center text-slate-400 text-sm">
+                            Advertisement Space
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- Floating Toolbar -->
+            <div id="blog-toolbar" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-full shadow-2xl border border-slate-200 dark:border-slate-700 px-2 py-2 flex space-x-2">
+                <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Back to Top">
+                    <i class="ph ph-arrow-up text-lg"></i>
+                </button>
+                <div class="w-px h-6 bg-slate-200 dark:bg-slate-700 my-auto"></div>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors opacity-50 cursor-not-allowed" title="Previous Story">
+                    <i class="ph ph-caret-left text-lg"></i>
+                </button>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Next Story">
+                    <i class="ph ph-caret-right text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-navy text-white border-t border-slate-800 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl tracking-tighter text-white">
+                        Michael<span class="text-brand-orange">.</span>Jinks
+                    </span>
+                </div>
+                <div class="text-center md:text-left">
+                    <small class="text-slate-400 text-xs sm:text-sm">
+                        &copy; <span id="year"></span> Abuashia Michael Jinks. All rights reserved. | Built with Tailwind & Vanilla JS.
+                    </small>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="https://linkedin.com/in/wan-loq" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+                    <a href="https://github.com/wanloq" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub"><i class="ph ph-github-logo text-2xl"></i></a>
+                    <a href="https://x.com/wanloq" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="X"><i class="ph ph-x-logo text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/ai.js"></script>
+</body>
+</html>
