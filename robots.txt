@@ -1,4 +1,7 @@
 User-agent: *
-Allow: /
+Allow: /index.html
+Allow: /blog.html
+Allow: /css/
+Disallow: /private/
 
 Sitemap: https://abuashiamichael.xyz/sitemap.xml

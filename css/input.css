@@ -1,465 +1,83 @@
-/* css/input.css */
-/* Tailwind CSS v4.3.2 */
-
 @import "tailwindcss";
 
-/* ----------------------------------------------------------
-   Theme
----------------------------------------------------------- */
-
 @theme {
-
-    /* Fonts */
-
-    --font-sans: "Inter", sans-serif;
-
-    /* Brand */
-
-    --color-brand-light: #f8fafc;
-    --color-brand-dark: #020617;
-
-    --color-brand-navy: #0f172a;
-    --color-brand-sky: #0ea5e9;
-    --color-brand-orange: #f97316;
-    --color-brand-purple: #8b5cf6;
-
-    /* Radius */
-
-    --radius-xl: 1rem;
-    --radius-2xl: 1.5rem;
-    --radius-3xl: 2rem;
-
-    /* Shadows */
-
-    --shadow-glow:
-        0 20px 50px rgba(14,165,233,.20);
-
-    --shadow-card:
-        0 10px 35px rgba(15,23,42,.08);
-
-    /* Timing */
-
-    --ease-out:
-        cubic-bezier(.22,1,.36,1);
-
+  --color-brand-navy: #0f172a;
+  --color-brand-orange: #f97316;
+  --color-brand-light: #f1f5f9;
+  --color-brand-dark-bg: #020617;
+  --color-brand-purple: #c084fc;
+  
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --shadow-premium: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
+  --shadow-premium-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
-
-/* ----------------------------------------------------------
-   Base
----------------------------------------------------------- */
 
 @layer base {
-
-    html{
-
-        font-family:var(--font-sans);
-
-        scroll-behavior:smooth;
-
-        color-scheme:light;
-
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+  
+  /* Modern Custom Scrollbar Tracking */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+      background: #020617;
     }
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  
+  /* Keyboard Focus Access Indicators */
+  *:focus-visible {
+    outline: 3px solid var(--color-brand-orange);
+    outline-offset: 4px;
+  }
+}
 
-    html.dark{
-
-        color-scheme:dark;
-
+@layer utilities {
+  .glassmorphic {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .glassmorphic {
+      background: rgba(2, 6, 23, 0.75);
+      border-bottom: 1px solid rgba(30, 41, 59, 0.5);
     }
+  }
 
-    body{
+  /* Structural Skeletal Loading Mask */
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
 
-        @apply bg-brand-light text-slate-800 antialiased;
-
-        text-rendering:optimizeLegibility;
-
-        transition:
-            background-color .3s,
-            color .3s;
-
+  @media (prefers-color-scheme: dark) {
+    .skeleton-shimmer {
+      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background-size: 200% 100%;
     }
-
-    html.dark body{
-
-        @apply bg-brand-dark text-slate-100;
-
-    }
-
-    ::selection{
-
-        @apply bg-brand-sky text-white;
-
-    }
-
-    img{
-
-        @apply max-w-full;
-
-        display:block;
-
-    }
-
-    button{
-
-        cursor:pointer;
-
-    }
-
-    a{
-
-        @apply transition-colors duration-300;
-
-    }
-
+  }
 }
 
-/* ----------------------------------------------------------
-   Scrollbar
----------------------------------------------------------- */
-
-@utility scrollbar {
-
-    scrollbar-width:thin;
-
-    scrollbar-color:
-        rgb(148 163 184)
-        transparent;
-
-}
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:transparent;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    border-radius:9999px;
-
-    background:rgb(148 163 184);
-
-}
-
-.dark ::-webkit-scrollbar-thumb{
-
-    background:rgb(71 85 105);
-
-}
-
-/* ----------------------------------------------------------
-   Buttons
----------------------------------------------------------- */
-
-@utility btn {
-
-    @apply inline-flex items-center justify-center gap-2;
-
-    @apply rounded-full;
-
-    @apply font-semibold;
-
-    @apply transition-all duration-300;
-
-}
-
-@utility btn-primary{
-
-    @apply btn;
-
-    @apply bg-brand-orange;
-
-    @apply text-white;
-
-    @apply px-7 py-4;
-
-    @apply hover:bg-orange-600;
-
-    @apply hover:-translate-y-0.5;
-
-    @apply shadow-lg;
-
-    @apply hover:shadow-xl;
-
-}
-
-@utility btn-secondary{
-
-    @apply btn;
-
-    @apply border border-slate-300;
-
-    @apply bg-white;
-
-    @apply px-7 py-4;
-
-    @apply dark:bg-slate-900;
-
-    @apply dark:border-slate-700;
-
-    @apply hover:border-brand-sky;
-
-    @apply hover:text-brand-sky;
-
-}
-
-/* ----------------------------------------------------------
-   Cards
----------------------------------------------------------- */
-
-@utility card{
-
-    @apply rounded-3xl;
-
-    @apply border border-slate-200;
-
-    @apply bg-white;
-
-    @apply shadow-sm;
-
-    @apply transition-all duration-300;
-
-    @apply dark:border-slate-800;
-
-    @apply dark:bg-slate-900;
-
-}
-
-@utility card-hover{
-
-    @apply hover:-translate-y-2;
-
-    @apply hover:shadow-2xl;
-
-}
-
-/* ----------------------------------------------------------
-   Glass
----------------------------------------------------------- */
-
-@utility glass{
-
-    @apply bg-white/70;
-
-    @apply backdrop-blur-xl;
-
-    @apply border border-white/20;
-
-}
-
-.dark .glass{
-
-    @apply bg-slate-950/70;
-
-    @apply border-slate-800;
-
-}
-
-/* ----------------------------------------------------------
-   Gradient Text
----------------------------------------------------------- */
-
-@utility gradient-text{
-
-    @apply bg-gradient-to-r;
-
-    @apply from-brand-sky;
-
-    @apply via-brand-purple;
-
-    @apply to-brand-orange;
-
-    @apply bg-clip-text;
-
-    @apply text-transparent;
-
-}
-
-/* ----------------------------------------------------------
-   Animation Utilities
----------------------------------------------------------- */
-
-@utility fade-up{
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-}
-
-@utility fade-up-visible{
-
-    opacity:1;
-
-    transform:none;
-
-}
-
-@utility glow{
-
-    animation:
-        glowPulse
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-@utility floating{
-
-    animation:
-        floating
-        5s
-        ease-in-out
-        infinite;
-
-}
-
-@utility spin-slow{
-
-    animation:
-        spin
-        2.5s
-        linear
-        infinite;
-
-}
-
-/* ----------------------------------------------------------
-   Keyframes
----------------------------------------------------------- */
-
-@keyframes glowPulse{
-
-    0%,100%{
-
-        filter:brightness(1);
-
-    }
-
-    50%{
-
-        filter:brightness(1.15);
-
-    }
-
-}
-
-@keyframes floating{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes fade-up{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:none;
-
-    }
-
-}
-
-/* ----------------------------------------------------------
-   Utilities
----------------------------------------------------------- */
-
-@utility section{
-
-    @apply py-28;
-
-}
-
-@utility container-page{
-
-    @apply mx-auto;
-
-    @apply max-w-7xl;
-
-    @apply px-6;
-
-    @apply lg:px-8;
-
-}
-
-@utility heading{
-
-    @apply text-4xl;
-
-    @apply font-black;
-
-    @apply tracking-tight;
-
-    @apply md:text-5xl;
-
-}
-
-@utility paragraph{
-
-    @apply leading-8;
-
-    @apply text-slate-600;
-
-    @apply dark:text-slate-400;
-
-}
-
-@utility badge{
-
-    @apply inline-flex;
-
-    @apply rounded-full;
-
-    @apply px-4 py-2;
-
-    @apply text-sm;
-
-    @apply font-semibold;
-
-}
-
-@utility icon-box{
-
-    @apply flex;
-
-    @apply h-14 w-14;
-
-    @apply items-center;
-
-    @apply justify-center;
-
-    @apply rounded-2xl;
-
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
