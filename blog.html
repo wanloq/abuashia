@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -20,170 +18,1227 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/output.css">
-</head>
-<body class="bg-white text-slate-800 dark:bg-brand-dark-bg dark:text-slate-200 antialiased transition-colors duration-300 pt-20">
+</head> -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
-    <header class="fixed top-0 left-0 w-full z-50 glassmorphic">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-1 font-extrabold text-2xl tracking-tight text-brand-navy dark:text-white">
-                <span>Michael</span><span class="text-brand-orange">.</span><span>Blog</span>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog | Michael Jinks</title>
+
+    <meta name="description"
+        content="Software Engineering, AI, Golang, Python and Machine Learning articles by Michael Jinks.">
+
+    <link rel="icon" href="assets/images/favicon.png">
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="assets/css/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <header id="navbar"
+        class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+
+        <div class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+            <a href="index.html" class="text-2xl font-black tracking-tight">
+
+                Michael<span class="text-brand-orange">.</span>Jinks
+
             </a>
-            <nav class="flex items-center space-x-6 text-xs font-bold uppercase tracking-wider">
-                <a href="index.html" class="hover:text-brand-orange transition-colors"><i class="fa-solid fa-arrow-left mr-1.5"></i> Back to Portfolio</a>
-                <a href="index.html#contact" class="px-4 py-2 rounded-lg bg-brand-orange text-white hover:bg-orange-600 transition-colors shadow-sm">Subscribe</a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+
+                <a href="index.html" class="hover:text-brand-orange transition">
+
+                    Portfolio
+
+                </a>
+
+                <a href="blog.html" class="text-brand-orange">
+
+                    Blog
+
+                </a>
+
+                <a href="podcast.html" class="hover:text-brand-orange transition">
+
+                    Podcast
+
+                </a>
+
+                <a href="#newsletter" class="hover:text-brand-orange transition">
+
+                    Newsletter
+
+                </a>
+
             </nav>
+
+            <div class="flex items-center gap-3">
+
+                <!-- Search -->
+
+                <button
+                    class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+                <!-- Theme -->
+
+                <button id="theme-toggle"
+                    class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </div>
+
         </div>
+
     </header>
 
-    <section class="bg-slate-50 dark:bg-slate-900/40 border-b border-slate-100 dark:border-slate-900 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-tr from-brand-purple/5 to-transparent pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto text-center space-y-4 relative z-10">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-orange bg-orange-100 dark:bg-orange-950/40 px-3 py-1 rounded-full">The Engineering Ledger</span>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy dark:text-white tracking-tight max-w-3xl mx-auto leading-tight">
-                Compiling Architecture Metrics, Concurrent Algorithms & Artificial Intelligence Blueprints
-            </h1>
-            <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
-                Building in public. Weekly breakdowns exploring structural performance engineering across backend maps and intelligent software layers.
-            </p>
-        </div>
-    </section>
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-        
-        <main class="lg:col-span-8 space-y-16">
-            
-            <article id="story-go-concurrency" class="space-y-4 border-b border-slate-100 dark:border-slate-900 pb-12 last:border-0 group">
-                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-800 skeleton-shimmer">
-                    <img src="https://placehold.co/800x450/0f172a/ffffff?text=Deep+Dive:+Go+Channels+and+Mutexes" alt="Concurrency Model Performance Mapping visualization" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-300" loading="lazy">
-                </div>
-                <div class="flex items-center space-x-3 text-xs font-semibold text-slate-400">
-                    <span class="text-brand-orange uppercase font-bold">Backend Architecture</span>
-                    <span>•</span>
-                    <time datetime="2026-06-18">June 18, 2026</time>
-                    <span>•</span>
-                    <span>6 Min Read</span>
-                </div>
-                <h2 class="text-2xl font-black text-brand-navy dark:text-white tracking-tight hover:text-brand-orange transition-colors">
-                    <a href="#story-go-concurrency">Demystifying Memory Allocations: Building High-Throughput Pipelines with Go Channels</a>
-                </h2>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    When orchestrating microservice patterns under heavy system loads, traditional mutex structures frequently introduce downstream threading wait states. This runtime deep-dive evaluates internal queue architectures within Go runtime channel primitives, parsing buffer mechanisms, safety loops, and benchmarking strategic design configurations optimized for asynchronous pipeline distribution.
-                </p>
-                <div class="pt-2">
-                    <a href="#story-go-concurrency" class="inline-flex items-center space-x-1.5 text-xs font-bold text-brand-purple hover:text-brand-orange transition-all">
-                        <span>Read Full Architectural Essay</span>
-                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    </a>
-                </div>
-            </article>
+    <section class="pt-40 pb-20">
 
-            <article id="story-prompt-engineering" class="space-y-4 border-b border-slate-100 dark:border-slate-900 pb-12 last:border-0 group">
-                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-800 skeleton-shimmer">
-                    <img src="https://placehold.co/800x450/1e293b/ffffff?text=Prompt+Engineering+Pipelines" alt="Prompt matrix abstraction graph mapping" class="w-full h-full object-cover group-hover:scale-101 transition-transform duration-300" loading="lazy">
-                </div>
-                <div class="flex items-center space-x-3 text-xs font-semibold text-slate-400">
-                    <span class="text-brand-orange uppercase font-bold">Artificial Intelligence</span>
-                    <span>•</span>
-                    <time datetime="2026-06-02">June 02, 2026</time>
-                    <span>•</span>
-                    <span>8 Min Read</span>
-                </div>
-                <h2 class="text-2xl font-black text-brand-navy dark:text-white tracking-tight hover:text-brand-orange transition-colors">
-                    <a href="#story-prompt-engineering">Prompt Engineering as a Deterministic Compiler Layer: From Chaos to Schema Output</a>
-                </h2>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Relying on natural language inputs inside automated assembly runtimes frequently introduces processing uncertainty. By executing programmatic context framing, zero-shot structured delimiters, and embedded JSON routing validation nodes, we can treat generative LLM API endpoints as reliable, structured compilers capable of fueling industrial microservices.
-                </p>
-                <div class="pt-2">
-                    <a href="#story-prompt-engineering" class="inline-flex items-center space-x-1.5 text-xs font-bold text-brand-purple hover:text-brand-orange transition-all">
-                        <span>Read Full Architectural Essay</span>
-                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    </a>
-                </div>
-            </article>
+        <div class="max-w-7xl mx-auto px-6">
 
-        </main>
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
 
-        <aside class="lg:col-span-4 space-y-8" aria-label="Blog Sidebar Content Node">
-            
-            <div class="p-6 bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 rounded-2xl space-y-4">
-                <i class="fa-solid fa-bell-concierge text-brand-orange text-xl"></i>
-                <h3 class="text-sm font-bold text-brand-navy dark:text-white uppercase tracking-wider">Get System Updates</h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Zero promotional distribution. Strictly production telemetry, performance benchmarks, and deployment architectural metrics dispatched directly to your network entry points.
-                </p>
-                <form action="https://formspree.io/f/michaeljinksa@gmail.com" method="POST" class="space-y-2">
-                    <input type="email" name="subscriber-email" required placeholder="name@organization.com" class="w-full px-3 py-2.5 text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-brand-orange text-slate-800 dark:text-white">
-                    <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-navy dark:bg-white text-white dark:text-brand-navy text-xs font-bold hover:bg-brand-orange dark:hover:bg-brand-orange dark:hover:text-white transition-colors cursor-pointer">
-                        Initialize Subscription Node
-                    </button>
-                </form>
-            </div>
+                <!-- LEFT -->
 
-            <div class="p-6 bg-white dark:bg-slate-900 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl text-center py-12 space-y-2">
-                <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 block">Sponsor Workspace System</span>
-                <p class="text-xs font-bold text-slate-700 dark:text-slate-300">Targeting High-Capacity Systems Roles?</p>
-                <p class="text-[11px] text-slate-400 max-w-xs mx-auto">Engage Abuashia Michael Jinks directly for systems contracts or full-time roles.</p>
-                <a href="index.html#contact" class="inline-block mt-2 text-xs font-bold text-brand-orange hover:underline">Secure Engineering Asset <i class="fa-solid fa-arrow-right text-[9px]"></i></a>
-            </div>
+                <div class="lg:col-span-6">
 
-        </aside>
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest">
 
-    </section>
+                        <i class="fa-solid fa-fire"></i>
 
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-2">
-        <a href="#story-go-concurrency" class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 shadow-lg border border-slate-100 dark:border-slate-700 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-all text-xs" title="Navigate to Previous Article">
-            <i class="fa-solid fa-arrow-up"></i>
-        </a>
-        <a href="#story-prompt-engineering" class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 shadow-lg border border-slate-100 dark:border-slate-700 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-all text-xs" title="Navigate to Next Article">
-            <i class="fa-solid fa-arrow-down"></i>
-        </a>
-        <a href="#" class="w-10 h-10 rounded-full bg-brand-navy dark:bg-white text-white dark:text-brand-navy shadow-lg flex items-center justify-center hover:bg-brand-orange dark:hover:bg-brand-orange dark:hover:text-white transition-all text-xs" title="Back to Top Scroll Threshold">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-    </div>
+                        Featured Article
 
-    <footer class="bg-slate-50 dark:bg-brand-dark-bg border-t border-slate-100 dark:border-slate-900 transition-colors duration-300 py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto space-y-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="space-y-3">
-                    <h4 class="text-xs font-bold text-brand-navy dark:text-white uppercase tracking-wider">Trending Arrays</h4>
-                    <ul class="space-y-1.5 text-xs text-slate-400 font-medium">
-                        <li><a href="#story-go-concurrency" class="hover:text-brand-orange">Golang Allocation Primitives</a></li>
-                        <li><a href="#" class="hover:text-brand-orange">Distributed System Mutex Loops</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-3">
-                    <h4 class="text-xs font-bold text-brand-navy dark:text-white uppercase tracking-wider">Latest Telemetry</h4>
-                    <ul class="space-y-1.5 text-xs text-slate-400 font-medium">
-                        <li><a href="#story-prompt-engineering" class="hover:text-brand-orange">Deterministic AI JSON Blocks</a></li>
-                        <li><a href="#" class="hover:text-brand-orange">Tailwind v4 CLI Migration</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-3">
-                    <h4 class="text-xs font-bold text-brand-navy dark:text-white uppercase tracking-wider">System Maps</h4>
-                    <ul class="space-y-1.5 text-xs text-slate-400 font-medium">
-                        <li><a href="index.html" class="hover:text-brand-orange">Core Engineering Portfolio</a></li>
-                        <li><a href="index.html#projects" class="hover:text-brand-orange">GitHub Active Repositories</a></li>
-                    </ul>
-                </div>
-                <div class="space-y-3">
-                    <h4 class="text-xs font-bold text-brand-navy dark:text-white uppercase tracking-wider">Network Address</h4>
-                    <p class="text-xs text-slate-400 font-medium leading-relaxed">
-                        Abuja, Nigeria / Remote Infrastructure Deployment Stack.
+                    </span>
+
+                    <h1 class="mt-6 text-5xl font-black tracking-tight leading-tight">
+
+                        Building AI Applications with
+
+                        <span class="text-brand-orange">
+
+                            Golang
+
+                        </span>
+
+                        and
+
+                        <span class="text-brand-purple">
+
+                            Python
+
+                        </span>
+
+                    </h1>
+
+                    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+
+                        Learn how modern backend architecture, prompt engineering,
+                        and scalable AI workflows can be combined to build production-ready
+                        applications using Go, Python, and Large Language Models.
+
                     </p>
+
+                    <div class="flex flex-wrap gap-4 mt-8">
+
+                        <a href="#"
+                            class="px-6 py-3 rounded-xl bg-brand-orange text-white font-semibold hover:scale-105 transition">
+
+                            Read Article
+
+                        </a>
+
+                        <a href="#"
+                            class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900 transition">
+
+                            View All Posts
+
+                        </a>
+
+                    </div>
+
+                    <div class="flex gap-8 mt-10 text-sm">
+
+                        <div>
+
+                            <p class="text-slate-400 uppercase text-xs">
+
+                                Published
+
+                            </p>
+
+                            <p class="font-semibold">
+
+                                July 2026
+
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-slate-400 uppercase text-xs">
+
+                                Reading Time
+
+                            </p>
+
+                            <p class="font-semibold">
+
+                                12 mins
+
+                            </p>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-slate-400 uppercase text-xs">
+
+                                Category
+
+                            </p>
+
+                            <p class="font-semibold">
+
+                                Artificial Intelligence
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
-            
-            <div class="pt-8 border-t border-slate-200/60 dark:border-slate-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-                <small class="text-xs text-slate-400 font-medium">&copy; 2026 Abuashia Michael Jinks Ledger System. Built entirely without JavaScript execution nodes.</small>
-                <div class="flex space-x-3 text-slate-400">
-                    <a href="https://github.com/wanloq" target="_blank" class="hover:text-brand-orange"><i class="fa-brands fa-github text-sm"></i></a>
-                    <a href="https://linkedin.com/in/wan-loq" target="_blank" class="hover:text-brand-orange"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+
+                <!-- RIGHT -->
+
+                <div class="lg:col-span-6">
+
+                    <div class="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+
+                        <img src="assets/images/blog/hero.jpg" class="w-full aspect-[4/3] object-cover">
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CATEGORY PILLS -->
+    <!-- ========================= -->
+
+    <section class="pb-12">
+
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-3">
+
+            <button class="px-5 py-2 rounded-full bg-brand-orange text-white">
+
+                All
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-orange">
+
+                Artificial Intelligence
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+
+                Golang
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+
+                Python
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+
+                Web Development
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+
+                Career
+
+            </button>
+
+            <button
+                class="px-5 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+
+                Productivity
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CONTENT -->
+    <!-- ========================= -->
+
+    <section class="pb-24">
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+
+            <!-- Left (Posts) -->
+
+            <div class="lg:col-span-8">
+
+                <!-- posts begin here -->
+                <!-- ===================================== -->
+                <!-- LATEST ARTICLES -->
+                <!-- ===================================== -->
+
+                <div class="flex items-center justify-between mb-8">
+
+                    <div>
+
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-purple">
+                            Latest Articles
+                        </span>
+
+                        <h2 class="text-3xl font-black mt-2">
+                            Fresh Insights
+                        </h2>
+
+                    </div>
+
+                    <a href="#" class="text-brand-orange font-semibold hover:underline">
+
+                        View all
+
+                    </a>
+
+                </div>
+
+                <div class="space-y-8">
+
+                    <!-- ARTICLE -->
+
+                    <article
+                        class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <div class="grid md:grid-cols-5">
+
+                            <div class="md:col-span-2 overflow-hidden">
+
+                                <img src="assets/images/blog/post1.jpg" alt=""
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                            </div>
+
+                            <div class="md:col-span-3 p-8">
+
+                                <div class="flex items-center gap-3 mb-4">
+
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold">
+
+                                        AI
+
+                                    </span>
+
+                                    <span class="text-xs text-slate-500">
+
+                                        8 min read
+
+                                    </span>
+
+                                </div>
+
+                                <h3 class="text-2xl font-bold leading-tight group-hover:text-brand-orange transition">
+
+                                    Designing Production-Ready AI Applications with Golang
+
+                                </h3>
+
+                                <p class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+
+                                    Explore scalable architectures for AI-powered systems,
+                                    combining Golang APIs, Python services, and modern prompt
+                                    engineering techniques into a clean production workflow.
+
+                                </p>
+
+                                <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+
+                                    <div class="flex items-center gap-5 text-sm text-slate-500">
+
+                                        <span>
+
+                                            <i class="fa-regular fa-calendar mr-2"></i>
+
+                                            Jul 27, 2026
+
+                                        </span>
+
+                                        <span>
+
+                                            <i class="fa-regular fa-eye mr-2"></i>
+
+                                            2.4K
+
+                                        </span>
+
+                                        <span>
+
+                                            <i class="fa-regular fa-comment mr-2"></i>
+
+                                            18
+
+                                        </span>
+
+                                    </div>
+
+                                    <a href="post.html" class="font-semibold text-brand-orange">
+
+                                        Read More →
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ARTICLE -->
+
+                    <article
+                        class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <div class="grid md:grid-cols-5">
+
+                            <div class="md:col-span-2 overflow-hidden">
+
+                                <img src="assets/images/blog/post2.jpg"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                            </div>
+
+                            <div class="md:col-span-3 p-8">
+
+                                <div class="flex items-center gap-3 mb-4">
+
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-bold">
+
+                                        Career
+
+                                    </span>
+
+                                    <span class="text-xs text-slate-500">
+
+                                        6 min read
+
+                                    </span>
+
+                                </div>
+
+                                <h3 class="text-2xl font-bold group-hover:text-brand-orange transition">
+
+                                    Lessons I Learned While Transitioning from Mechanical Engineering to Software
+
+                                </h3>
+
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">
+
+                                    How engineering principles like precision, systems thinking,
+                                    and problem-solving helped shape my journey into software
+                                    engineering.
+
+                                </p>
+
+                                <div class="mt-6 flex justify-between items-center">
+
+                                    <div class="flex gap-5 text-sm text-slate-500">
+
+                                        <span>
+
+                                            <i class="fa-regular fa-eye mr-2"></i>
+
+                                            980
+
+                                        </span>
+
+                                        <span>
+
+                                            <i class="fa-regular fa-comment mr-2"></i>
+
+                                            9
+
+                                        </span>
+
+                                    </div>
+
+                                    <a href="post.html" class="font-semibold text-brand-orange">
+
+                                        Read More →
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ARTICLE -->
+
+                    <article
+                        class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <div class="grid md:grid-cols-5">
+
+                            <div class="md:col-span-2 overflow-hidden">
+
+                                <img src="assets/images/blog/post3.jpg"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                            </div>
+
+                            <div class="md:col-span-3 p-8">
+
+                                <div class="flex items-center gap-3 mb-4">
+
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold">
+
+                                        Golang
+
+                                    </span>
+
+                                    <span class="text-xs text-slate-500">
+
+                                        10 min read
+
+                                    </span>
+
+                                </div>
+
+                                <h3 class="text-2xl font-bold group-hover:text-brand-orange transition">
+
+                                    Building REST APIs in GoFiber from Scratch
+
+                                </h3>
+
+                                <p class="mt-4 text-slate-600 dark:text-slate-400">
+
+                                    Learn how to build clean, scalable REST APIs using GoFiber,
+                                    middleware, authentication, routing, and SQLite.
+
+                                </p>
+
+                                <div class="mt-6 flex justify-between items-center">
+
+                                    <div class="flex gap-5 text-sm text-slate-500">
+
+                                        <span>
+
+                                            <i class="fa-regular fa-eye mr-2"></i>
+
+                                            3.8K
+
+                                        </span>
+
+                                        <span>
+
+                                            <i class="fa-regular fa-comment mr-2"></i>
+
+                                            31
+
+                                        </span>
+
+                                    </div>
+
+                                    <a href="post.html" class="font-semibold text-brand-orange">
+
+                                        Read More →
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- Pagination -->
+
+                <div class="mt-12 flex justify-center gap-3">
+
+                    <button
+                        class="w-12 h-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-orange">
+
+                        <i class="fa-solid fa-chevron-left"></i>
+
+                    </button>
+
+                    <button class="w-12 h-12 rounded-xl bg-brand-orange text-white">
+
+                        1
+
+                    </button>
+
+                    <button class="w-12 h-12 rounded-xl border border-slate-200 dark:border-slate-700">
+
+                        2
+
+                    </button>
+
+                    <button class="w-12 h-12 rounded-xl border border-slate-200 dark:border-slate-700">
+
+                        3
+
+                    </button>
+
+                    <button
+                        class="w-12 h-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-orange">
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ===================================== -->
+            <!-- RIGHT SIDEBAR STARTS HERE -->
+            <!-- ===================================== -->
+
+            <div class="lg:col-span-4 space-y-8">
+                <!-- ===================================== -->
+                <!-- AUTHOR CARD -->
+                <!-- ===================================== -->
+
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+
+                    <img src="assets/images/profile.png" alt="Michael Jinks"
+                        class="w-28 h-28 rounded-full object-cover mx-auto border-4 border-brand-orange">
+
+                    <h3 class="mt-5 text-xl font-bold text-center">
+
+                        Michael Jinks
+
+                    </h3>
+
+                    <p class="mt-2 text-center text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+
+                        Full-Stack Developer & AI/ML Engineer documenting the journey of
+                        building intelligent software, shipping products, and learning in public.
+
+                    </p>
+
+                    <div class="flex justify-center gap-3 mt-6">
+
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-linkedin"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-github"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-youtube"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-x-twitter"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- ===================================== -->
+                <!-- SEARCH -->
+                <!-- ===================================== -->
+
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                    <h3 class="text-lg font-bold mb-5">
+
+                        Search Articles
+
+                    </h3>
+
+                    <div class="relative">
+
+                        <input type="text" placeholder="Search..."
+                            class="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent py-3 pl-12 pr-4 outline-none focus:border-brand-orange">
+
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- ===================================== -->
+                <!-- TRENDING -->
+                <!-- ===================================== -->
+
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                    <h3 class="text-xl font-bold mb-6">
+
+                        🔥 Trending
+
+                    </h3>
+
+                    <div class="space-y-5">
+
+                        <a href="#" class="flex gap-4 group">
+
+                            <img src="assets/images/blog/post1.jpg" class="w-20 h-20 rounded-xl object-cover">
+
+                            <div>
+
+                                <h4 class="font-semibold group-hover:text-brand-orange transition">
+
+                                    Building Production AI Systems with Go
+
+                                </h4>
+
+                                <p class="text-xs text-slate-500 mt-2">
+
+                                    July 27 · 8 min read
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a href="#" class="flex gap-4 group">
+
+                            <img src="assets/images/blog/post2.jpg" class="w-20 h-20 rounded-xl object-cover">
+
+                            <div>
+
+                                <h4 class="font-semibold group-hover:text-brand-orange transition">
+
+                                    Becoming a Better Software Engineer
+
+                                </h4>
+
+                                <p class="text-xs text-slate-500 mt-2">
+
+                                    July 22 · 6 min read
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                        <a href="#" class="flex gap-4 group">
+
+                            <img src="assets/images/blog/post3.jpg" class="w-20 h-20 rounded-xl object-cover">
+
+                            <div>
+
+                                <h4 class="font-semibold group-hover:text-brand-orange transition">
+
+                                    GoFiber Authentication Guide
+
+                                </h4>
+
+                                <p class="text-xs text-slate-500 mt-2">
+
+                                    July 18 · 12 min read
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- ===================================== -->
+                <!-- CATEGORIES -->
+                <!-- ===================================== -->
+
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                    <h3 class="text-xl font-bold mb-6">
+
+                        Categories
+
+                    </h3>
+
+                    <div class="space-y-4">
+
+                        <div class="flex justify-between">
+
+                            <span>Artificial Intelligence</span>
+
+                            <span class="text-brand-orange font-semibold">12</span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span>Golang</span>
+
+                            <span class="text-brand-orange font-semibold">8</span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span>Python</span>
+
+                            <span class="text-brand-orange font-semibold">9</span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span>Career</span>
+
+                            <span class="text-brand-orange font-semibold">5</span>
+
+                        </div>
+
+                        <div class="flex justify-between">
+
+                            <span>Productivity</span>
+
+                            <span class="text-brand-orange font-semibold">7</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ===================================== -->
+                <!-- TAGS -->
+                <!-- ===================================== -->
+
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+
+                    <h3 class="text-xl font-bold mb-6">
+
+                        Popular Tags
+
+                    </h3>
+
+                    <div class="flex flex-wrap gap-3">
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">AI</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">LLMs</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">Tailwind CSS</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">Golang</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">Python</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">Machine Learning</span>
+
+                        <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800">Prompt Engineering</span>
+
+                    </div>
+
+                </div>
+
+                <!-- ===================================== -->
+                <!-- NEWSLETTER -->
+                <!-- ===================================== -->
+
+                <div id="newsletter" class="rounded-3xl bg-brand-navy text-white p-8">
+
+                    <span class="text-xs uppercase tracking-widest text-brand-orange">
+
+                        Newsletter
+
+                    </span>
+
+                    <h3 class="mt-3 text-3xl font-black">
+
+                        Stay Updated
+
+                    </h3>
+
+                    <p class="mt-4 text-slate-300">
+
+                        Receive new software engineering and AI articles directly in your inbox.
+
+                    </p>
+
+                    <input type="email" placeholder="Your email"
+                        class="mt-6 w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 outline-none">
+
+                    <button
+                        class="mt-4 w-full rounded-xl bg-brand-orange py-3 font-semibold hover:brightness-110 transition">
+
+                        Subscribe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ===================================== -->
+    <!-- CALL TO ACTION -->
+    <!-- ===================================== -->
+
+    <section class="py-24 bg-slate-100 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <span
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest">
+
+                Keep Learning
+
+            </span>
+
+            <h2 class="mt-6 text-4xl md:text-5xl font-black tracking-tight">
+
+                Learn.
+                <span class="text-brand-orange">Build.</span>
+                Share.
+
+            </h2>
+
+            <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+
+                I document my journey as I learn Full-Stack Development, Artificial
+                Intelligence, and Machine Learning—sharing practical tutorials,
+                project breakdowns, and lessons learned while building products in
+                public.
+
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+
+                <a href="#newsletter"
+                    class="px-8 py-4 rounded-2xl bg-brand-orange text-white font-semibold hover:scale-105 transition">
+
+                    Join the Newsletter
+
+                </a>
+
+                <a href="index.html"
+                    class="px-8 py-4 rounded-2xl border border-slate-300 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition">
+
+                    Visit Portfolio
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================== -->
+
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <div class="grid lg:grid-cols-4 gap-12">
+
+                <!-- Brand -->
+
+                <div>
+
+                    <a href="index.html" class="text-3xl font-black">
+
+                        Michael<span class="text-brand-orange">.</span>Jinks
+
+                    </a>
+
+                    <p class="mt-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+
+                        Full-Stack Developer and AI/ML Engineer documenting the
+                        journey of building products, learning in public, and
+                        creating software that solves real-world problems.
+
+                    </p>
+
+                </div>
+
+                <!-- Navigation -->
+
+                <div>
+
+                    <h3 class="font-bold mb-5">
+
+                        Navigation
+
+                    </h3>
+
+                    <div class="space-y-3">
+
+                        <a href="index.html" class="block hover:text-brand-orange transition">
+
+                            Portfolio
+
+                        </a>
+
+                        <a href="blog.html" class="block hover:text-brand-orange transition">
+
+                            Blog
+
+                        </a>
+
+                        <a href="podcast.html" class="block hover:text-brand-orange transition">
+
+                            Podcast
+
+                        </a>
+
+                        <a href="#newsletter" class="block hover:text-brand-orange transition">
+
+                            Newsletter
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Categories -->
+
+                <div>
+
+                    <h3 class="font-bold mb-5">
+
+                        Categories
+
+                    </h3>
+
+                    <div class="space-y-3">
+
+                        <a href="#" class="block hover:text-brand-orange">
+
+                            Artificial Intelligence
+
+                        </a>
+
+                        <a href="#" class="block hover:text-brand-orange">
+
+                            Golang
+
+                        </a>
+
+                        <a href="#" class="block hover:text-brand-orange">
+
+                            Python
+
+                        </a>
+
+                        <a href="#" class="block hover:text-brand-orange">
+
+                            Web Development
+
+                        </a>
+
+                        <a href="#" class="block hover:text-brand-orange">
+
+                            Career
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Connect -->
+
+                <div>
+
+                    <h3 class="font-bold mb-5">
+
+                        Connect
+
+                    </h3>
+
+                    <div class="flex gap-4">
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-linkedin"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-github"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-youtube"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center hover:bg-brand-orange hover:text-white transition">
+
+                            <i class="fab fa-x-twitter"></i>
+
+                        </a>
+
+                    </div>
+
+                    <p class="mt-6 text-sm text-slate-500">
+
+                        Building in public.<br>
+
+                        Learning every day.<br>
+
+                        Shipping meaningful software.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+
+            <div
+                class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <p class="text-sm text-slate-500">
+
+                    © 2026 Michael Jinks. All rights reserved.
+
+                </p>
+
+                <div class="flex gap-6 text-sm">
+
+                    <a href="#" class="hover:text-brand-orange">
+
+                        Privacy
+
+                    </a>
+
+                    <a href="#" class="hover:text-brand-orange">
+
+                        Terms
+
+                    </a>
+
+                    <a href="#" class="hover:text-brand-orange">
+
+                        RSS Feed
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </footer>
 
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/blog.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

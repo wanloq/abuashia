@@ -1,0 +1,312 @@
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Systems Engineering Blog | Insights by Abuashia Michael Jinks</title>
+    <meta name="description" content="Deep dives into asynchronous backend runtimes, machine learning pipelines, structured prompt engineering, and Go performance tuning patterns compiled by Abuashia Michael Jinks.">
+    <meta name="keywords" content="Golang Blog, AI Engineering Articles, Vibe Coding, Technical Writing Developer, Software Architecture Insights, Abuashia Michael Jinks Blog">
+    <link rel="canonical" href="https://abuashiamichael.xyz/blog.html">
+
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="https://abuashiamichael.xyz/blog.html">
+    <meta property="og:title" content="Systems Engineering Blog | Abuashia Michael Jinks">
+    <meta property="og:description" content="Technical compilation tracking high performance code compilation paradigms, Docker deployments, and prompt engineering protocols.">
+    <meta property="og:image" content="https://abuashiamichael.xyz/assets/og-blog-preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/output.css">
+</head> -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Building AI Applications with Golang | Michael Jinks</title>
+
+    <meta name="description"
+        content="Learn how to build production-ready AI applications using Golang, Python and Large Language Models.">
+
+    <link rel="stylesheet" href="assets/css/output.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors">
+
+<!-- Reading Progress -->
+
+<div
+    id="reading-progress"
+    class="fixed top-0 left-0 h-1 bg-brand-orange z-[100] w-0 transition-all duration-100">
+</div>
+
+<!-- Navbar -->
+
+<header
+    id="navbar"
+    class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
+
+    <div class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+        <a
+            href="index.html"
+            class="text-2xl font-black">
+
+            Michael<span class="text-brand-orange">.</span>Jinks
+
+        </a>
+
+        <nav class="hidden lg:flex gap-8 font-semibold">
+
+            <a href="index.html">Portfolio</a>
+            <a href="blog.html" class="text-brand-orange">Blog</a>
+            <a href="podcast.html">Podcast</a>
+
+        </nav>
+
+        <button
+            id="theme-toggle"
+            class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- Hero -->
+
+<section class="pt-36 pb-14">
+
+<div class="max-w-5xl mx-auto px-6">
+
+<!-- Breadcrumb -->
+
+<div
+class="flex items-center gap-3 text-sm text-slate-500">
+
+<a href="blog.html"
+class="hover:text-brand-orange">
+
+Blog
+
+</a>
+
+<i class="fa-solid fa-chevron-right text-xs"></i>
+
+<span>
+
+Artificial Intelligence
+
+</span>
+
+</div>
+
+<!-- Category -->
+
+<div class="mt-8">
+
+<span
+class="px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase">
+
+Artificial Intelligence
+
+</span>
+
+</div>
+
+<!-- Title -->
+
+<h1
+class="mt-6 text-5xl md:text-6xl font-black tracking-tight leading-tight">
+
+Building Production-Ready AI Applications
+
+with
+
+<span class="text-brand-orange">
+
+Golang
+
+</span>
+
+and
+
+<span class="text-brand-purple">
+
+Python
+
+</span>
+
+</h1>
+
+<!-- Excerpt -->
+
+<p
+class="mt-8 text-xl leading-relaxed text-slate-600 dark:text-slate-400">
+
+Learn the architecture, tools, and engineering principles behind scalable
+AI-powered software using Go, Python, vector databases, prompt engineering,
+and modern backend design.
+
+</p>
+
+<!-- Metadata -->
+
+<div
+class="mt-10 flex flex-wrap gap-8 text-sm">
+
+<div class="flex items-center gap-3">
+
+<img
+src="assets/images/profile.png"
+class="w-12 h-12 rounded-full">
+
+<div>
+
+<p class="font-semibold">
+
+Michael Jinks
+
+</p>
+
+<p class="text-slate-500">
+
+Author
+
+</p>
+
+</div>
+
+</div>
+
+<div>
+
+<p class="text-slate-500 uppercase text-xs">
+
+Published
+
+</p>
+
+<p>
+
+July 27, 2026
+
+</p>
+
+</div>
+
+<div>
+
+<p class="text-slate-500 uppercase text-xs">
+
+Reading Time
+
+</p>
+
+<p>
+
+12 min
+
+</p>
+
+</div>
+
+<div>
+
+<p class="text-slate-500 uppercase text-xs">
+
+Difficulty
+
+</p>
+
+<p>
+
+Intermediate
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Tags -->
+
+<div
+class="flex flex-wrap gap-3 mt-10">
+
+<span
+class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-900">
+
+#golang
+
+</span>
+
+<span
+class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-900">
+
+#python
+
+</span>
+
+<span
+class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-900">
+
+#llm
+
+</span>
+
+<span
+class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-900">
+
+#machinelearning
+
+</span>
+
+<span
+class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-900">
+
+#backend
+
+</span>
+
+</div>
+
+<!-- Featured Image -->
+
+<div
+class="mt-14 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+
+<img
+src="assets/images/blog/hero.jpg"
+class="w-full aspect-[16/8] object-cover">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Main -->
+
+<section class="pb-24">
+
+<div
+class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-14">
+
+<!-- Article -->
+
+<article
+class="lg:col-span-8 prose prose-lg dark:prose-invert max-w-none">
+
+<!-- Article begins here -->
