@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Building Production AI Apps with Golang | Michael Jinks
+    </title>
+
+    <meta
+        name="description"
+        content="Learn how to build scalable AI applications using Golang, Python and Prompt Engineering.">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/output.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
+
+<!-- ====================================== -->
+<!-- READING PROGRESS BAR -->
+<!-- ====================================== -->
+
+<div
+    id="reading-progress"
+    class="fixed top-0 left-0 z-[60] h-1 bg-brand-orange w-0 transition-all duration-150">
+</div>
+
+<!-- ====================================== -->
+<!-- NAVBAR -->
+<!-- ====================================== -->
+
+<header
+    id="navbar"
+    class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
+
+    <div
+        class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+        <a
+            href="index.html"
+            class="text-2xl font-black">
+
+            Michael<span class="text-brand-orange">.</span>Jinks
+
+        </a>
+
+        <nav
+            class="hidden lg:flex gap-8 font-semibold text-sm">
+
+            <a href="index.html">Portfolio</a>
+
+            <a
+                href="blog.html"
+                class="text-brand-orange">
+
+                Blog
+
+            </a>
+
+            <a href="podcast.html">
+
+                Podcast
+
+            </a>
+
+        </nav>
+
+        <div
+            class="flex items-center gap-3">
+
+            <button
+                id="theme-toggle"
+                class="w-11 h-11 rounded-full border border-slate-200 dark:border-slate-700">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ====================================== -->
+<!-- HERO -->
+<!-- ====================================== -->
+
+<section
+    class="pt-40 pb-20">
+
+<div
+class="max-w-5xl mx-auto px-6">
+
+<!-- Category -->
+
+<div
+class="flex flex-wrap gap-3">
+
+<span
+class="px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase tracking-widest">
+
+Artificial Intelligence
+
+</span>
+
+<span
+class="px-4 py-2 rounded-full bg-brand-purple/10 text-brand-purple text-xs font-bold uppercase tracking-widest">
+
+Golang
+
+</span>
+
+</div>
+
+<!-- Title -->
+
+<h1
+class="mt-8 text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+
+Building
+
+<span class="text-brand-orange">
+
+Production AI Applications
+
+</span>
+
+using
+
+<span class="text-brand-purple">
+
+Golang & Python
+
+</span>
+
+</h1>
+
+<!-- Subtitle -->
+
+<p
+class="mt-8 text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-4xl">
+
+Discover how modern backend architecture, prompt engineering,
+and scalable APIs combine to create fast, production-ready AI
+applications capable of serving thousands of users.
+
+</p>
+
+<!-- Metadata -->
+
+<div
+class="mt-12 flex flex-wrap gap-10">
+
+<div
+class="flex items-center gap-4">
+
+<img
+src="assets/images/profile.png"
+class="w-14 h-14 rounded-full object-cover border-2 border-brand-orange">
+
+<div>
+
+<p
+class="font-bold">
+
+Michael Jinks
+
+</p>
+
+<p
+class="text-sm text-slate-500">
+
+Author
+
+</p>
+
+</div>
+
+</div>
+
+<div>
+
+<p
+class="text-sm text-slate-500">
+
+Published
+
+</p>
+
+<p
+class="font-semibold">
+
+July 28, 2026
+
+</p>
+
+</div>
+
+<div>
+
+<p
+class="text-sm text-slate-500">
+
+Reading Time
+
+</p>
+
+<p
+class="font-semibold">
+
+12 min read
+
+</p>
+
+</div>
+
+<div>
+
+<p
+class="text-sm text-slate-500">
+
+Views
+
+</p>
+
+<p
+class="font-semibold">
+
+2,461
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Social Share -->
+
+<div
+class="mt-12 flex flex-wrap gap-4">
+
+<button
+class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-brand-orange transition">
+
+<i class="fab fa-linkedin"></i>
+
+</button>
+
+<button
+class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-brand-orange transition">
+
+<i class="fab fa-x-twitter"></i>
+
+</button>
+
+<button
+class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-brand-orange transition">
+
+<i class="fa-solid fa-link"></i>
+
+</button>
+
+<button
+class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-brand-orange transition">
+
+<i class="fa-regular fa-bookmark"></i>
+
+</button>
+
+</div>
+
+<!-- Featured Image -->
+
+<div
+class="mt-16 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
+
+<img
+src="assets/images/blog/hero.jpg"
+class="w-full aspect-[16/8] object-cover">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- ARTICLE LAYOUT -->
+<!-- ====================================== -->
+
+<section
+class="pb-32">
+
+<div
+class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16">
+
+<!-- ====================================== -->
+<!-- STICKY TABLE OF CONTENTS -->
+<!-- ====================================== -->
+
+<aside
+class="hidden lg:block lg:col-span-3">
+
+<div
+class="sticky top-28">
+
+<span
+class="text-xs uppercase tracking-widest text-brand-purple font-bold">
+
+On This Page
+
+</span>
+
+<nav
+class="mt-6 space-y-5 text-sm">
+
+<a
+href="#introduction"
+class="toc-link block">
+
+Introduction
+
+</a>
+
+<a
+href="#architecture"
+class="toc-link block">
+
+Architecture
+
+</a>
+
+<a
+href="#backend"
+class="toc-link block">
+
+Backend Design
+
+</a>
+
+<a
+href="#prompt-engineering"
+class="toc-link block">
+
+Prompt Engineering
+
+</a>
+
+<a
+href="#deployment"
+class="toc-link block">
+
+Deployment
+
+</a>
+
+<a
+href="#conclusion"
+class="toc-link block">
+
+Conclusion
+
+</a>
+
+</nav>
+
+</div>
+
+</aside>
+
+<!-- ====================================== -->
+<!-- ARTICLE CONTENT -->
+<!-- ====================================== -->
+
+<article
+class="lg:col-span-9 article-content">
+
+<!-- ====================================== -->
+<!-- INTRODUCTION -->
+<!-- ====================================== -->
+
+<section id="introduction">
+
+    <p class="text-xl leading-relaxed text-slate-700 dark:text-slate-300">
+
+        Artificial Intelligence has rapidly evolved from experimental research
+        into a core technology powering products used by millions of people
+        every day. From intelligent assistants and recommendation systems to
+        automated customer support, modern applications increasingly rely on AI
+        to deliver richer and more personalized experiences.
+
+    </p>
+
+    <p>
+
+        While Python remains the dominant language for AI research, many
+        production systems require a faster, more efficient backend capable of
+        handling thousands of concurrent requests. This is where Golang shines.
+
+    </p>
+
+    <p>
+
+        In this article we'll explore how Golang and Python complement one
+        another to build scalable AI applications suitable for real-world
+        deployment.
+
+    </p>
+
+</section>
+
+<!-- ====================================== -->
+<!-- INFO BOX -->
+<!-- ====================================== -->
+
+<div
+    class="my-10 rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/30 p-6">
+
+    <div class="flex gap-4">
+
+        <i
+            class="fa-solid fa-circle-info text-blue-600 text-xl mt-1"></i>
+
+        <div>
+
+            <h3 class="font-bold">
+
+                Before You Continue
+
+            </h3>
+
+            <p class="mt-2">
+
+                This guide assumes basic familiarity with APIs, HTTP requests,
+                and at least one programming language. Code samples are
+                intentionally simplified to highlight architectural concepts
+                rather than framework-specific implementation details.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- ARCHITECTURE -->
+<!-- ====================================== -->
+
+<section id="architecture">
+
+<h2>
+
+System Architecture
+
+</h2>
+
+<p>
+
+A production AI application typically consists of multiple services working
+together rather than one monolithic application.
+
+</p>
+
+<img
+src="assets/images/blog/architecture.png"
+alt=""
+class="rounded-2xl border border-slate-200 dark:border-slate-800">
+
+<p class="text-sm text-center text-slate-500">
+
+Example architecture combining Go APIs with Python AI services.
+
+</p>
+
+<p>
+
+A common production workflow looks like this:
+
+</p>
+
+<ul>
+
+<li>User sends a request.</li>
+
+<li>GoFiber validates and authenticates the request.</li>
+
+<li>Business logic processes the request.</li>
+
+<li>Python AI service generates the response.</li>
+
+<li>Redis caches repeated queries.</li>
+
+<li>Results are stored in PostgreSQL.</li>
+
+</ul>
+
+</section>
+
+<!-- ====================================== -->
+<!-- NOTE -->
+<!-- ====================================== -->
+
+<div
+class="my-10 rounded-2xl border-l-4 border-brand-orange bg-orange-50 dark:bg-orange-950/20 p-6">
+
+<strong>
+
+Key Takeaway
+
+</strong>
+
+<p class="mt-3">
+
+Keep AI workloads separate from your API layer. Let Golang manage networking,
+authentication, caching, and concurrency while Python focuses solely on
+machine learning inference.
+
+</p>
+
+</div>
+
+<!-- ====================================== -->
+<!-- BACKEND -->
+<!-- ====================================== -->
+
+<section id="backend">
+
+<h2>
+
+Designing the Backend
+
+</h2>
+
+<p>
+
+The backend is responsible for orchestrating communication between the client
+application and your AI models.
+
+</p>
+
+<p>
+
+A clean folder structure makes scaling significantly easier as your project
+grows.
+
+</p>
+
+</section>
+
+<!-- ====================================== -->
+<!-- CODE BLOCK -->
+<!-- ====================================== -->
+
+<div
+class="relative my-10">
+
+<button
+class="absolute top-4 right-4 px-3 py-2 rounded-lg bg-slate-800 text-white text-xs hover:bg-brand-orange transition">
+
+Copy
+
+</button>
+
+<pre
+class="rounded-2xl bg-slate-950 text-slate-100 overflow-x-auto p-8 text-sm"><code>molly-ai/
+
+├── cmd/
+
+├── internal/
+
+│   ├── handlers/
+
+│   ├── middleware/
+
+│   ├── services/
+
+│   ├── models/
+
+│   └── repositories/
+
+├── python/
+
+├── web/
+
+└── configs/
+</code></pre>
+
+</div>
+
+<p>
+
+Separating handlers, services, repositories, and middleware improves
+maintainability while allowing different teams to work independently.
+
+</p>
+
+<!-- ====================================== -->
+<!-- QUOTE -->
+<!-- ====================================== -->
+
+<blockquote
+class="my-12 border-l-4 border-brand-purple pl-6 italic text-2xl font-light">
+
+"Clean architecture isn't about writing more code.
+It's about making future changes easier."
+
+</blockquote>
+
+<!-- ====================================== -->
+<!-- PROMPT ENGINEERING -->
+<!-- ====================================== -->
+
+<section id="prompt-engineering">
+
+<h2>
+
+Prompt Engineering
+
+</h2>
+
+<p>
+
+A large language model is only as useful as the instructions it receives.
+Well-structured prompts reduce hallucinations, improve consistency, and make
+applications significantly more reliable.
+
+</p>
+
+</section>
+
+<!-- ====================================== -->
+<!-- PROMPT BLOCK -->
+<!-- ====================================== -->
+
+<div
+class="rounded-2xl border border-brand-purple bg-brand-purple/5 p-6 my-10">
+
+<div class="flex items-center gap-3 mb-4">
+
+<i class="fa-solid fa-wand-magic-sparkles text-brand-purple"></i>
+
+<h3 class="font-bold">
+
+Example Prompt
+
+</h3>
+
+</div>
+
+<pre
+class="overflow-x-auto text-sm whitespace-pre-wrap"><code>You are an experienced software architect.
+
+Generate production-ready Go code that follows clean architecture,
+uses dependency injection,
+returns JSON responses,
+and includes error handling.</code></pre>
+
+</div>
+
+<!-- ====================================== -->
+<!-- TERMINAL -->
+<!-- ====================================== -->
+
+<div
+class="my-10 rounded-2xl overflow-hidden border border-slate-800">
+
+<div
+class="bg-slate-900 px-5 py-3 flex items-center gap-2">
+
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+</div>
+
+<pre
+class="bg-black text-green-400 p-6 overflow-x-auto"><code>$ go run cmd/server/main.go
+
+✓ Database Connected
+
+✓ Redis Connected
+
+✓ AI Service Running
+
+✓ HTTP Server Listening on :3000
+</code></pre>
+
+</div>
+
+<!-- ====================================== -->
+<!-- DEPLOYMENT -->
+<!-- ====================================== -->
+
+<section id="deployment">
+
+<h2>
+
+Deployment Strategy
+
+</h2>
+
+<p>
+
+Once your application works locally, the next challenge is deploying it in a
+way that is secure, scalable, and easy to maintain.
+
+</p>
+
+<p>
+
+Containerization with Docker, reverse proxies, managed databases, and CI/CD
+pipelines make production deployments far more reliable than manually copying
+files to a server.
+
+</p>
+
+</section>
+
+<!-- ====================================== -->
+<!-- WARNING -->
+<!-- ====================================== -->
+
+<div
+class="my-10 rounded-2xl border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/20 p-6">
+
+<div class="flex gap-4">
+
+<i
+class="fa-solid fa-triangle-exclamation text-red-500 text-xl mt-1"></i>
+
+<div>
+
+<h3 class="font-bold">
+
+Common Mistake
+
+</h3>
+
+<p class="mt-2">
+
+Avoid placing API keys, database credentials, or AI provider secrets directly
+inside your source code. Use environment variables or a secure secrets manager
+instead.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- CONCLUSION -->
+<!-- ====================================== -->
+
+<section id="conclusion">
+
+<h2>
+
+Final Thoughts
+
+</h2>
+
+<p>
+
+Building production-ready AI applications isn't about choosing Golang over
+Python or Python over Golang—it's about using each language where it excels.
+
+</p>
+
+<p>
+
+By combining Go's speed and concurrency with Python's mature AI ecosystem, you
+can build applications that are both intelligent and scalable.
+
+</p>
+
+<p>
+
+As AI continues to evolve, developers who understand software engineering
+principles alongside machine learning concepts will be well positioned to build
+the next generation of impactful products.
+
+</p>
+
+</section>
+
+<!-- ====================================== -->
+<!-- PART 3 CONTINUES HERE -->

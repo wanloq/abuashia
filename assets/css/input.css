@@ -1,83 +1,344 @@
 @import "tailwindcss";
 
+/*
+  Tailwind v4 CSS-first theme.
+  Three colors only:
+  - obsidian → near-black background
+  - mist     → off-white foreground / glass tint
+  - signal   → single accent (Apple system blue)
+  Every custom color/spacing/animation token below is picked up
+  automatically as utility classes (bg-obsidian, text-mist, bg-signal,
+  animate-glow, etc.) — no tailwind.config.js required.
+*/
 @theme {
-  --color-brand-navy: #0f172a;
-  --color-brand-orange: #f97316;
-  --color-brand-light: #f1f5f9;
-  --color-brand-dark-bg: #020617;
-  --color-brand-purple: #c084fc;
-  
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  --shadow-premium: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
-  --shadow-premium-dark: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --color-obsidian: #0b0b0f;
+  --color-mist: #f5f5f7;
+  --color-signal: #0a84ff;
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --animate-glow: glow 10s ease-in-out infinite;
+  --animate-glow-slow: glow-slow 16s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
-@layer base {
+@keyframes glow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.15);
+  }
+}
+
+@keyframes glow-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 30px) scale(1.1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-obsidian);
+  color: var(--color-mist);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll-reveal: JS toggles .is-visible via IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences everywhere */
+@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: smooth;
-    font-family: var(--font-sans);
+    scroll-behavior: auto;
   }
-  
-  /* Modern Custom Scrollbar Tracking */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f5f9;
-  }
-  @media (prefers-color-scheme: dark) {
-    ::-webkit-scrollbar-track {
-      background: #020617;
-    }
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 9999px;
-    border: 2px solid transparent;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-  }
-  
-  /* Keyboard Focus Access Indicators */
-  *:focus-visible {
-    outline: 3px solid var(--color-brand-orange);
-    outline-offset: 4px;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-@layer utilities {
-  .glassmorphic {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(241, 245, 249, 0.8);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .glassmorphic {
-      background: rgba(2, 6, 23, 0.75);
-      border-bottom: 1px solid rgba(30, 41, 59, 0.5);
-    }
+@layer components {
+  /* ===================================================
+       ARTICLE
+    =================================================== */
+
+  .article-content {
+    @apply text-slate-700 dark:text-slate-300
+        leading-8 text-lg;
   }
 
-  /* Structural Skeletal Loading Mask */
-  .skeleton-shimmer {
-    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.6s infinite linear;
+  .article-content > * {
+    @apply mb-8;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .skeleton-shimmer {
-      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
-      background-size: 200% 100%;
-    }
+  /* ===================================================
+       Headings
+    =================================================== */
+
+  .article-content h2 {
+    @apply text-4xl
+        font-black
+        tracking-tight
+        text-brand-navy
+        dark:text-white
+        mt-20
+        mb-8
+        scroll-mt-32;
+  }
+
+  .article-content h3 {
+    @apply text-2xl
+        font-bold
+        text-brand-purple
+        mt-14
+        mb-6;
+  }
+
+  .article-content h4 {
+    @apply text-xl
+        font-semibold
+        mt-10
+        mb-4;
+  }
+
+  /* ===================================================
+       Paragraphs
+    =================================================== */
+
+  .article-content p {
+    @apply leading-8
+        text-slate-600
+        dark:text-slate-400;
+  }
+
+  /* ===================================================
+       Links
+    =================================================== */
+
+  .article-content a {
+    @apply text-brand-orange
+        font-semibold
+        underline
+        underline-offset-4;
+  }
+
+  /* ===================================================
+       Lists
+    =================================================== */
+
+  .article-content ul {
+    @apply list-disc
+        pl-8
+        space-y-3;
+  }
+
+  .article-content ol {
+    @apply list-decimal
+        pl-8
+        space-y-3;
+  }
+
+  .article-content li {
+    @apply text-slate-600
+        dark:text-slate-400;
+  }
+
+  /* ===================================================
+       Images
+    =================================================== */
+
+  .article-content img {
+    @apply rounded-3xl
+        shadow-xl
+        border
+        border-slate-200
+        dark:border-slate-800
+        my-10;
+  }
+
+  /* ===================================================
+       Image Caption
+    =================================================== */
+
+  .article-content figcaption {
+    @apply text-center
+        text-sm
+        text-slate-500
+        italic
+        mt-3;
+  }
+
+  /* ===================================================
+       Horizontal Rule
+    =================================================== */
+
+  .article-content hr {
+    @apply border-slate-200
+        dark:border-slate-800
+        my-16;
+  }
+
+  /* ===================================================
+       Inline Code
+    =================================================== */
+
+  .article-content code {
+    @apply rounded-md
+        bg-slate-200
+        dark:bg-slate-800
+        px-2
+        py-1
+        text-brand-orange
+        text-sm
+        font-medium;
+  }
+
+  /* ===================================================
+       Code Blocks
+    =================================================== */
+
+  .article-content pre {
+    @apply rounded-3xl
+        overflow-hidden
+        bg-slate-950
+        border
+        border-slate-800
+        p-0
+        my-10;
+  }
+
+  .article-content pre code {
+    @apply block
+        bg-transparent
+        text-slate-200
+        p-8
+        overflow-x-auto
+        leading-7;
+  }
+
+  /* ===================================================
+       Blockquotes
+    =================================================== */
+
+  .article-content blockquote {
+    @apply border-l-4
+        border-brand-purple
+        pl-8
+        italic
+        text-2xl
+        font-light
+        text-brand-purple
+        my-14;
+  }
+  .callout {
+    @apply rounded-3xl
+    p-8
+    border
+    flex
+    gap-5
+    my-10;
+  }
+
+  .callout-icon {
+    @apply text-2xl
+    mt-1;
+  }
+
+  .callout-info {
+    @apply bg-blue-50
+    dark:bg-blue-950/30
+    border-blue-200
+    dark:border-blue-900;
+  }
+
+  .callout-success {
+    @apply bg-green-50
+    dark:bg-green-950/30
+    border-green-200
+    dark:border-green-900;
+  }
+
+  .callout-warning {
+    @apply bg-orange-50
+    dark:bg-orange-950/20
+    border-orange-300;
+  }
+
+  .callout-danger {
+    @apply bg-red-50
+    dark:bg-red-950/20
+    border-red-300;
+  }
+  .code-block {
+    @apply rounded-3xl
+    overflow-hidden
+    border
+    border-slate-800
+    my-12;
+  }
+
+  .code-header {
+    @apply flex
+    justify-between
+    items-center
+    px-6
+    py-4
+    bg-slate-900
+    text-slate-300
+    text-sm;
+  }
+
+  .copy-btn {
+    @apply flex
+    items-center
+    gap-2
+    rounded-lg
+    bg-slate-800
+    px-4
+    py-2
+    hover:bg-brand-orange
+    transition;
   }
 }
 
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+#reading-progress {
+  background: linear-gradient(90deg, #ff8a00, #f97316, #7c3aed);
+
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
 }
