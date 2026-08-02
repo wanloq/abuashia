@@ -68,7 +68,8 @@
     Skip to content
   </a>
 
-  <header class="fixed top-0 left-0 w-full z-50 glassmorphic transition-all duration-300">
+  <header id="navbar"
+    class="fixed top-0 left-0 w-full z-50 glassmorphic dark:bg-brand-dark-bg/70 backdrop-blur-xl transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
       <a href="#home" class="flex items-center space-x-2 group focus:outline-none"
@@ -553,8 +554,7 @@
 
     <!-- intro video -->
     <section>
-      <div
-        class="relative w-full pb-[56.25%] lg:pb-0 bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl lg:h-[80vh] max-w-7xl mx-auto shadow-lg">
+      <div class="relative w-full pb-[56.25%] lg:pb-0  rounded-xl lg:h-[80vh] max-w-7xl mx-auto shadow-lg">
         <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
           src="https://www.youtube.com/embed/yGjbQrLgDr0?si=7HFoqZBxmmB0jX-_" title="Jinks Introduction Video"
           frameborder="0"
@@ -575,7 +575,7 @@
               A Few Projects I've Built and Deployed
             </h2>
           </div>
-          <a href="https://github.com/wanloq" target="_blank"
+          <a href="https://github.com/wanloq" target="_blank" rel="noreferrer"
             class="inline-flex items-center space-x-2 text-sm font-bold text-brand-orange hover:text-orange-600 transition-colors duration-200">
             <span>View more on my GitHub</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
@@ -584,13 +584,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- Project 1 -->
+
+          <!-- Project 1 Mamaput-Online -->
           <article
             class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl shadow-lg">
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
                 <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/DGNKghWsk6s" title="Mamaput website video" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share; picture-in-picture"
@@ -609,40 +609,34 @@
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2">
                 <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Golang</span>
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">HTML5</span>
                 <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Redis
-                  Queue</span>
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Tailwind
+                  CSS</span>
                 <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Cloudflare
-                  R2</span>
-                <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Node
-                  Cluster</span>
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">JavaScript
+                  ES6</span>
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
-                <a href="https://github.com/wanloq/enugu-restaurant" target="_blank"
-                  class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">View
-                  Repository</a>
-                <a href="https://wanloq.github.io/enugu-restaurant/" target="_blank"
+                <a href="https://github.com/wanloq/enugu-restaurant" target="_blank" rel="noreferrer"
+                  class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">Repository</a>
+                <a href="https://wanloq.github.io/enugu-restaurant/" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-center text-xs font-bold text-white transition-all shadow-sm">Live
                   Demo</a>
               </div>
             </div>
           </article>
 
-
-          <!-- Project 2 -->
+          <!-- Project 2 The 21st Century English Primer Series -->
           <article
             class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl shadow-lg">
-                <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
+                <!-- <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/DGNKghWsk6s" title="Mamaput website video" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
               </div>
               <span
                 class="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] uppercase font-black tracking-wider px-2.5 py-1 rounded-full shadow-md">Ongoing</span>
@@ -660,32 +654,33 @@
                   class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Amazon
                   KDP</span>
                 <span
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Microsoft
+                  Office 365</span>
+                <span
                   class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Gemini</span>
                 <span
                   class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">ChatGPT</span>
-                <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Microsoft
-                  Office 365</span>
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
+
                 <!-- View on Selar  -->
-                <a href="https://selar.co" target="_blank"
-                  class="py-2 px-3 rounded-lg bg-brand-purple hover:bg-orange-600 text-center text-xs font-bold text-white transition-all shadow-sm">Selar</a>
-                 
+                <a href="https://selar.com/2518o7u972" target="_blank" rel="noreferrer"
+                  class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">Selar</a>
+
                 <!-- View on Amazon KDP -->
-                <a href="https://www.amazon.com/dp/B09X5Q5Q5Q" target="_blank"
-                  class="py-2 px-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-center text-xs font-bold text-white transition-all shadow-sm">Amazon KDP</a>
+                <a href="https://a.co/d/0aV4r9Pd" target="_blank" rel="noreferrer"
+                  class="py-2 px-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-center text-xs font-bold text-white transition-all shadow-sm">Amazon</a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2 -->
+          <!-- Project 3 myGigNG -->
           <article
             class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
+
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl shadow-lg">
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
                 <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/yGjbQrLgDr0?si=7HFoqZBxmmB0jX-_" title="Project Demo"
                   frameborder="0"
@@ -716,7 +711,7 @@
                   class="px-2 py-0.5 bg-orange-50 dark:bg-orange-950/20 text-brand-orange text-[10px] font-bold rounded">Geo-Routing</span>
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
-                <a href="https://github.com/wanloq/mygigng" target="_blank"
+                <a href="https://github.com/wanloq/mygigng" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">Inspect
                   System Architecture</a>
                 <span
@@ -726,13 +721,13 @@
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 3 Molly-KI -->
           <article
             class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
+
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl shadow-lg">
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
                 <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/oPd2Ug9Kf6I" title="Molly KI video" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share; picture-in-picture"
@@ -764,10 +759,10 @@
                   Cluster</span>
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
-                <a href="https://github.com/wanloq/enugu-restaurant" target="_blank"
+                <a href="https://github.com/wanloq/enugu-restaurant" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">
                   Repository</a>
-                <a href="https://wanloq.github.io/enugu-restaurant/" target="_blank"
+                <a href="https://wanloq.github.io/enugu-restaurant/" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-brand-orange hover:bg-orange-600 text-center text-xs font-bold text-white transition-all shadow-sm">Visit
                   Site</a>
               </div>
@@ -780,8 +775,7 @@
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
 
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/jinksSelfie.png] bg-cover bg-center rounded-xl shadow-lg">
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
                 <!-- <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/episode-1/id1367507452?i=1000408076505"></iframe> -->
                 <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/G5jAvpxQHK4" title="The Boring Podcaso" frameborder="0"
@@ -796,7 +790,9 @@
                   class="text-brand-purple"> The Boring Podcast</span>
               </h3>
               <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed grow">
-                A calm educational podcast designed for curious minds, late-night thinkers, and insomniacs. Each episode explores the fascinating stories behind everyday objects, technologies, and historical events through slow, thoughtful narration.
+                A calm educational podcast designed for curious minds, late-night thinkers, and insomniacs. Each episode
+                explores the fascinating stories behind everyday objects, technologies, and historical events through
+                slow, thoughtful narration.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2">
                 <span
@@ -812,12 +808,12 @@
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
                 <!-- Listen on Spotify -->
-                <a href="https://open.spotify.com/episode/4bZvK9q3Qz1X8vY2J5p3N1" target="_blank"
+                <a href="https://open.spotify.com/episode/4bZvK9q3Qz1X8vY2J5p3N1" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">Spotify</a>
                 <!-- Listen on Apple Podcasts -->
-                <a href="https://podcasts.apple.com/episode/4bZvK9q3Qz1X8vY2J5p3N1" target="_blank"
+                <a href="https://podcasts.apple.com/episode/4bZvK9q3Qz1X8vY2J5p3N1" target="_blank" rel="noreferrer"
                   class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">Apple
-                  </a>
+                </a>
               </div>
             </div>
           </article>
@@ -828,46 +824,48 @@
             <div class="relative aspect-video w-full bg-slate-100 dark:bg-slate-800 skeleton-shimmer">
 
               <!-- project video -->
-              <div
-                class="relative w-full h-0 pb-[56.25%] bg-url[assets/images/profilec.png] bg-cover bg-center rounded-xl shadow-lg">
-                <!-- <iframe class="absolute top-0 left-0 w-full h-[150%] rounded-xl shadow-lg"
-                  src="https://www.youtube.com/embed/G5jAvpxQHK4" title="The Boring Podcaso" frameborder="0"
+              <div class="relative w-full h-0 pb-[56.25%]  rounded-xl shadow-lg">
+                <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                  src="https://www.youtube.com/embed/TkhZNaAqNgg" title="mega Chicken Sentiment Analysis"
+                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
               </div>
               <span
-                class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] uppercase font-black tracking-wider px-2.5 py-1 rounded-full shadow-md">In
-                Progress</span>
+                class="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] uppercase font-black tracking-wider px-2.5 py-1 rounded-full shadow-md">Completed
+              </span>
             </div>
             <div class="p-6 flex flex-col grow space-y-4">
               <h3 class="text-lg font-bold text-brand-navy dark:text-white tracking-tight">Brand / Sentiment Analysis:
                 <span class="text-brand-purple"> Mega Chicken Ikota-Ajah</span>
               </h3>
               <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed grow">
-                A detailed report on the public perception of Mega Chicken Ikota-Ajah, analyzing customer feedback, social media sentiment, and overall brand reputation to provide actionable insights for business improvement.
+                A detailed report on the public perception of Mega Chicken Ikota-Ajah, analyzing customer feedback,
+                social media sentiment, and overall brand reputation to provide actionable insights for business
+                improvement.
               </p>
               <div class="flex flex-wrap gap-1.5 pt-2">
                 <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Golang</span>
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">
+                  Claude
+                </span>
                 <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Redis
-                  Queue</span>
-                <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Cloudflare
-                  R2</span>
-                <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Node
-                  Cluster</span>
+                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold rounded text-slate-600 dark:text-slate-300">Microsoft Office
+                </span>
               </div>
               <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50 dark:border-slate-800/80">
-                <a href="https://github.com/wanloq/megachicken-s-a/" target="_blank"
-                  class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">View
-                  Content</a>
+                <a href="https://github.com/wanloq/megachicken-s-a/" target="_blank" rel="noreferrer" class="py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700/80 text-center text-xs font-bold text-slate-800 dark:text-white transition-all">
+                  View Content
+                </a>
                 <span
                   class="py-2 px-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 text-center text-xs font-semibold text-slate-400 dark:text-slate-600 border border-transparent select-none cursor-not-allowed">
-                  Locked</span>
+                  Locked
+                </span>
               </div>
             </div>
+          </article>
+
         </div>
       </div>
 
@@ -963,7 +961,7 @@
               </div>
               <div>
                 <p class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Reach out on WhatsApp</p>
-                <a href="https://wa.me/2348157962789" target="_blank"
+                <a href="https://wa.me/2348157962789" target="_blank" rel="noreferrer"
                   class="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-orange transition-colors">+
                   (234) 815-796-2789</a>
               </div>
@@ -988,16 +986,16 @@
             <p class="text-[10px] uppercase tracking-widest font-extrabold text-slate-400">I'm Active On These Networks
             </p>
             <div class="flex space-x-3">
-              <a href="https://linkedin.com/in/wan-loq" target="_blank"
+              <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noreferrer"
                 class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange hover:border-brand-orange transition-all duration-200"
                 aria-label="LinkedIn Professional Vector Link"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://github.com/wanloq" target="_blank"
+              <a href="https://github.com/wanloq" target="_blank" rel="noreferrer"
                 class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange hover:border-brand-orange transition-all duration-200"
                 aria-label="GitHub Source Blueprint Link"><i class="fa-brands fa-github"></i></a>
-              <a href="https://x.com/wanloq" target="_blank"
+              <a href="https://x.com/wanloq" target="_blank" rel="noreferrer"
                 class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange hover:border-brand-orange transition-all duration-200"
                 aria-label="X Communication Matrix Link"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://instagram.com/wanloq" target="_blank"
+              <a href="https://instagram.com/wanloq" target="_blank" rel="noreferrer"
                 class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange hover:border-brand-orange transition-all duration-200"
                 aria-label="Instagram Stream Link"><i class="fa-brands fa-instagram"></i></a>
             </div>
@@ -1010,7 +1008,7 @@
   </main>
 
   <footer
-    class="sm:sticky bg-slate-50 dark:bg-brand-dark-bg border-t border-slate-100 dark:border-slate-900 transition-colors duration-300 py-8 px-4 sm:px-6 lg:px-8">
+    class="bg-slate-50 dark:bg-brand-dark-bg border-t border-slate-100 dark:border-slate-900 transition-colors duration-300 py-8 px-4 sm:px-6 lg:px-8">
     <div
       class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
 
@@ -1033,16 +1031,20 @@
               class="hover:text-brand-orange">My Podcast</a></span>
         </span>
         <div class="flex space-x-4 text-slate-400 dark:text-slate-600">
-          <a href="https://linkedin.com/in/wan-loq" target="_blank" class="hover:text-brand-orange transition-colors"
-            aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
-          <a href="https://github.com/wanloq" target="_blank" class="hover:text-brand-orange transition-colors"
-            aria-label="GitHub Repository Link"><i class="fa-brands fa-github text-sm"></i></a>
-          <a href="https://x.com/wanloq" target="_blank" class="hover:text-brand-orange transition-colors"
-            aria-label="X Feed Link"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+          <a href="https://linkedin.com/in/wan-loq" target="_blank" rel="noreferrer"
+            class="hover:text-brand-orange transition-colors" aria-label="LinkedIn Profile"><i
+              class="fa-brands fa-linkedin-in text-sm"></i></a>
+          <a href="https://github.com/wanloq" target="_blank" rel="noreferrer"
+            class="hover:text-brand-orange transition-colors" aria-label="GitHub Repository Link"><i
+              class="fa-brands fa-github text-sm"></i></a>
+          <a href="https://x.com/wanloq" target="_blank" rel="noreferrer"
+            class="hover:text-brand-orange transition-colors" aria-label="X Feed Link"><i
+              class="fa-brands fa-x-twitter text-sm"></i></a>
         </div>
 
       </div>
   </footer>
+  <script src="assets/js/navbar.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
